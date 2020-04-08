@@ -2,23 +2,62 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWP - Home</title>
     <link rel='stylesheet' href='styles.css'/>
+
+    <script type="text/javascript">
+      window.onscroll = function() {myFunction()};
+
+      function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";}
+    </script>
+
+    <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";}
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";}
+    </script>
+
+
   </head>
   <body>
 
-    <div class="section">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
 
+
+
+    <div class="header">
+      <h2>RW&P</h2>
+      <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()">open</span>
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <!-- <section>
       <div class="flex-container">
         <div class="header">
           <img src="images/title_card.jpg" alt="" class="title-card" />
 
         </div>
       </div>
-    </div>
+    </section> -->
 
-    <div class="section blue-background">
-
+    <section class = "blue-background">
       <div class="content">
         <h1>Welcome</h1>
         <p>Robert Walpole & Partners (RWP) was founded in 1968 and has been
@@ -26,12 +65,18 @@
           engaged in a wide range of civil engineering and building works
           carrying out design, supervision and project management. RWP offers a
           complete technical service for many types of project.</p>
+          <div class="image-container">
+            <a href="#about-rwp" class="click-area">
+              <img class='down-arrow' src='images/down-arrow.svg' />
+            </a>
 
+          </div>
       </div>
 
-    </div>
 
-    <div class="section">
+    </section>
+
+    <section id = "about-rwp">
 
       <div class="content">
         <h1>About RWP</h1>
@@ -58,10 +103,9 @@
 
       </div>
 
-    </div>
+    </section>
 
-    <div class="section blue-background">
-
+    <section class = "blue-background">
       <div class="content">
         <h1>Engineering Services</h1>
         <p>Our services include the following:</p>
@@ -75,11 +119,7 @@
         </ul>
 
       </div>
-
-    </div>
-
-
-
+    </section>
 
 
   </body>
