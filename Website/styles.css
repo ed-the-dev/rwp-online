@@ -93,6 +93,10 @@ section{
  margin-left: 50px;
 }
 
+/* .sidenav{
+  right: 0;
+} */
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
  transition: margin-left .5s;
@@ -151,6 +155,10 @@ section{
   background-color: #2A71B4;
   height: 100vh;
   scroll-snap-align: start;
+}
+
+.right-arrow{
+  height: 10%;
 }
 
 
