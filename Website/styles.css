@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'AcuminPro';
+  src: url('fonts/Acumin-RPro.woff') format('woff');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,20 +35,39 @@ header {
   top: 0;
   z-index: 1;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #1c2e37;
 }
+
+h1{
+  font-family: ambroise-francois-std,serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #dadada;
+}
+
+p{
+  color: #dadada;
+  font-family: 'AcuminPro'
+
+}
+
+/* LIGHT */
+
+/* font-family: ambroise-francois-std,serif;
+font-weight: 300;
+font-style: normal; */
 
 /* The progress container (grey background) */
 .progress-container {
   width: 100%;
   height: 4px;
-  background: #ccc;
+  background: #1c2e37;
 }
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 4px;
-  background: #4caf50;
+  background: #f7c86f;
   width: 0%;
 }
 
@@ -57,7 +81,7 @@ header {
  z-index: 2; /* Stay on top */
  top: 0; /* Stay at the top */
  left: 0;
- background-color: #111; /* Black*/
+ background-color: #dadada; /* Black*/
  overflow-x: hidden; /* Disable horizontal scroll */
  padding-top: 60px; /* Place content 60px from the top */
  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -68,14 +92,14 @@ header {
  padding: 8px 8px 8px 32px;
  text-decoration: none;
  font-size: 25px;
- color: #818181;
+ color: #1c2e37;
  display: block;
  transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
- color: #f1f1f1;
+ color: #f7c86f;
 }
 
 /* Position and style the close button (top right corner) */
@@ -105,7 +129,18 @@ header {
 
 /* My Stuff */
 
-.title-card{
+.menu-button{
+  height: 25px;
+  position: relative;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  /* top: 10px;
+  left: 10px; */
+}
+
+/* .title-card{
   display: flex;
   justify-content: center;
   width: 95%;
@@ -113,13 +148,13 @@ header {
   border-top: 20px;
   border-bottom: 20px;
   border-left: 2px;
-  border-right: 2px;
+  border-right: 2px; */
   /* position: absolute; */
-  top: 20px;
+  /* top: 20px;
   left: 0px;
   max-width:600px;
   border-style: solid;
-}
+} */
 
 .image-container{
   display: flex;
@@ -148,7 +183,7 @@ header {
 }
 
 .blue-background{
-  background-color: #2A71B4;
+  background-color: #1c2e37;
   height: 100vh;
   scroll-snap-align: start;
 }
@@ -159,7 +194,7 @@ header {
 
 .header-container{
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 
