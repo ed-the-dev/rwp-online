@@ -16,29 +16,52 @@
 
 /* Scroll Snapping */
 html{
-  scroll-snap-type: y mandatory;
-  scroll-behavior:smooth;
-  scroll-padding-top: 11.5vh;
+  /* scroll-snap-type: y mandatory; */
+  overflow-y: hidden;
+
 }
 
 body{
+  /* margin-top: 11.5vh; */
+  height: 100vh;
+  scroll-behavior:smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-padding-top: 11.5vh;
+
+
+  /* scroll-snap-align: start; */
 }
 
 section{
 
   scroll-snap-align: start;
+
+
+  /* Scroll Snapping */
+
+
   min-height: 88.5vh;
   max-height: max-content;
   display: flex;
   justify-content: center;
   background-color: #dadada;
+  /* align-items: center; */
   position: relative;
+  /* width: 1500px; */
 
+
+
+  /* scroll-margin-top: 200px; */
 }
 
+/* section:first-child{
+  margin-top: 11.5vh;
+} */
 
 #welcome{
     height: 100vh;
+    /* margin-top: 20vh; */
 }
 
 /* SCROLL PROGRESS */
@@ -51,6 +74,10 @@ header {
   background-color: #1c2e37;
 
 }
+.dummy{
+  color:red;
+  height: 20vh;
+}
 
 a{
   color: #1c2e37;
@@ -59,7 +86,7 @@ a{
 
 h1{
   color: #1c2e37;
-  font-family: 'AcuminProBold';
+  font-family: 'AcuminPro';
   /* margin-left: 10px; */
 
   margin: 3vh;
@@ -75,7 +102,7 @@ h1{
 	text-transform: uppercase;
 	word-spacing: 0px;
 
-  transition-timing-function: ease-out;
+
 
 }
 

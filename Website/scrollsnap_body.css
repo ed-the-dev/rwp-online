@@ -1,0 +1,33 @@
+html{
+  overflow-y: hidden;
+
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.section {
+    height: calc(100vh - 14em);
+    font-size: 1em;
+    color: white;
+    padding: 7em;
+    margin: 0;
+    scroll-snap-align: start;
+}
+
+.section:nth-of-type(1) {
+    background-color: hsl(0, 100%, 30%);
+}
+
+.section:nth-of-type(2) {
+    background-color: hsl(40, 100%, 30%);
+}
+
+.section:nth-of-type(3) {
+    background-color: hsl(50, 100%, 30%);
+}
