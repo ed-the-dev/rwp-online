@@ -1,390 +1,114 @@
-@font-face {
-  font-family: 'AcuminPro';
-  src: url('fonts/Acumin-RPro.woff') format('woff');
+*{box-sizing: border-box;
 }
-
-@font-face {
-  font-family: 'AcuminProBold';
-  src: url('fonts/Acumin-BdPro.woff') format('woff');
+html, body {
+  min-height: 100%;
 }
-
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background: linear-gradient(#dccf39 -50%, #b65e00 150%);
+  font-family: "Montserrat", sans-serif;
 }
 
-/* Scroll Snapping */
-html{
-  /* scroll-snap-type: y mandatory; */
-  overflow-y: hidden;
-
-}
-
-body{
-  /* margin-top: 11.5vh; */
-  height: 100vh;
-  scroll-behavior:smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-padding-top: 11.5vh;
-
-
-  /* scroll-snap-align: start; */
-}
-
-section{
-
-  scroll-snap-align: start;
-
-
-  /* Scroll Snapping */
-
-
-  min-height: 88.5vh;
-  max-height: max-content;
+main {
   display: flex;
-  justify-content: center;
-  background-color: #dadada;
-  /* align-items: center; */
-  position: relative;
-  /* width: 1500px; */
-
-
-
-  /* scroll-margin-top: 200px; */
+  flex-flow: column;
+  margin: 50px auto;
+  width: 960px;
+  max-width: 100%;
 }
 
-/* section:first-child{
-  margin-top: 11.5vh;
+
+
+
+
+/** Hover-related CSS **/
+.container {
+  z-index: 1;
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  width: 960px;
+  background-color: white;
+  opacity: 0.95;
+  padding: 15px 30px;
+  margin: 0 auto 30px;
+}
+
+
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  margin: 30px 15px 60px;
+}
+
+.example {
+  display: flex;
+  /* flex-flow: row nowrap; */
+  align-items: center;
+  margin: 0 0 45px;
+}
+
+.example .hover,
+.sidenav .navoption a {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  /* transition: all 0.2s ease-in-out; */
+  position: relative;
+}
+
+
+.example .hover:before, .example .hover:after,
+.sidenav a:before, .sidenav a:after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 10px;
+  height: 5px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.75s;
+  opacity: 1;
+  background-color: red;
+}
+
+.example .hover.hover-3:before,
+.sidenav a:before {
+  left: 50%;
+}
+
+.example .hover.hover-3:after
+,.sidenav a:after {
+  right: 50%;
+}
+
+.example:hover {
+  cursor: pointer;
+}
+
+/* .example:hover .hover:before, .example:hover .hover:after {
+  width: 100%;
+  opacity: 1;
 } */
 
-#welcome{
-    height: 100vh;
-    /* margin-top: 20vh; */
+.example:hover .hover.hover-3:before,
+.example:hover .hover.hover-3:after,
+.navoption:hover a:before,
+.navoption:hover a:after {
+  width: 50%;
 }
 
-/* SCROLL PROGRESS */
-
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  background-color: #1c2e37;
-
-}
-.dummy{
-  color:red;
-  height: 20vh;
-}
-
-a{
-  color: #1c2e37;
-  font-family: 'AcuminPro';
-}
-
-h1{
-  color: #1c2e37;
-  font-family: 'AcuminPro';
-  /* margin-left: 10px; */
-
-  margin: 3vh;
-
-  font-size: 6vh;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	letter-spacing: 3.5px;
-	/* line-height: 34.56px; */
-	text-align: left;
-	text-indent: 0vh;
-	text-transform: uppercase;
-	word-spacing: 0px;
-
-
-
-}
-
-p{
-  color: #1c2e37;
-  font-family: 'AcuminPro';
-  margin: 2.5vh;
-  font-size: 3vh;
-	letter-spacing: 2.5px;
-	line-height: 4vh;
-	text-align: left;
-}
-
-li{
-  list-style-type: none;
-  color: #1c2e37;
-  font-family: 'AcuminPro';
-  margin: 2.5vh;
-  font-size: 3vh;
-	letter-spacing: 2.5px;
-	line-height: 4vh;
-	text-align: left;
-
-
-  padding: 5px 2px 2px 5px;
-  border-radius: 5px 10px 5px;
-/*
-  border-radius: 10px; */
-  border: 3px solid #f7c86f;
-  margin: 10px;
-}
-
-.blue-background li{
-  color: #dadada;
-}
-
-/* LIGHT */
-
-/* font-family: ambroise-francois-std,serif;
-font-weight: 300;
-font-style: normal; */
-
-/* The progress container (grey background) */
-.progress-container {
-  width: 100%;
-  height: 4px;
-  background: #dadada;
-  /* background: #1c2e37; */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-  height: 4px;
-  background: #f7c86f;
-  width: 0%;
-}
-
-/* Side Navigation */
-
-/* The side navigation menu */
-.sidenav {
- height: 100%; /* 100% Full-height */
- width: 0; /* 0 width - change this with JavaScript */
- position: fixed; /* Stay in place */
- z-index: 2; /* Stay on top */
- top: 0; /* Stay at the top */
- left: 0;
- background-color: #dadada; /* Black*/
- overflow-x: hidden; /* Disable horizontal scroll */
- padding-top: 60px; /* Place content 60px from the top */
- transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* The navigation menu links */
-.sidenav a {
- padding: 8px 8px 8px 32px;
- text-decoration: none;
- font-size: 25px;
- color: #1c2e37;
- display: block;
- transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
- color: #f7c86f;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
- position: absolute;
- top: 0;
- right: 25px;
- font-size: 36px;
- margin-left: 50px;
-}
-
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
- transition: margin-left .5s;
- padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
- .sidenav {padding-top: 15px;}
- .sidenav a {font-size: 18px;}
-}
-
-/* My Stuff */
-
-.menu-button{
-  height: 32px;
-  position: relative;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  /* top: 10px;
-  left: 10px; */
-}
-
-.header-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#logotopright{
-  height: 11.5vh;
-  margin-left: auto;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  opacity: 1.0;
-}
-
-
-.click-area{
-  width: 20%;
-
-}
-
-
-.content{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 600px;
-  max-height: inherit;
-  width: 95%;
-  margin-top: 0vh; /* this property will have to change within the media rules
-                        scaling on other devices */
-}
-
-.dummy{
-  height: 11.5vh;
-}
-
-.blue-background{
-  background-color: #1c2e37;
-  /* scroll-snap-align: start; */
-}
-
-.blue-background h1{
-  color: #dadada;
-}
-
-.blue-background p{
-  color: #dadada;
-}
-
-
-
-.arrow {
-  border: solid #dadada;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.logomain{
-  height: 100px;
-  margin-bottom: 6px;
-}
-
-div .test {
-	/* Font & Text */
-	font-size: 23.04px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	letter-spacing: 3.456px;
-	line-height: 34.56px;
-	text-decoration: none solid rgb(255, 255, 255);
-	text-align: left;
-	text-indent: 0px;
-	text-transform: uppercase;
-	vertical-align: middle;
-	white-space: nowrap;
-	word-spacing: 0px;
-
-	/* Color & Background */
-	background-attachment: scroll;
-	background-color: rgba(0, 0, 0, 0);
-	background-image: none;
-	background-position: 0% 0%;
-	background-repeat: repeat;
-	color: rgb(255, 255, 255);
-
-	/* Box */
-	height: 59.1875px;
-	width: 271.563px;
-	border: 3px solid rgb(224, 55, 73);
-	border-top: 3px solid rgb(224, 55, 73);
-	border-right: 3px solid rgb(224, 55, 73);
-	border-bottom: 3px solid rgb(224, 55, 73);
-	border-left: 3px solid rgb(224, 55, 73);
-	margin: 0px;
-	padding: 9.60008px 19.1999px;
-	max-height: none;
-	min-height: 0px;
-	max-width: none;
-	min-width: 0px;
-
-	/* Positioning */
-	position: static;
-	top: auto;
-	bottom: auto;
-	right: auto;
-	left: auto;
-	float: none;
-	display: block;
-	clear: none;
-	z-index: auto;
-
-	/* List */
-	list-style-image: none;
-	list-style-type: none;
-	list-style-position: outside;
-
-	/* Table */
-	border-collapse: separate;
-	border-spacing: 0px 0px;
-	caption-side: top;
-	empty-cells: show;
-	table-layout: auto;
-
-	/* Miscellaneous */
-	overflow: visible;
-	cursor: default;
-	visibility: visible;
-
-	/* Effects */
-	transform: none;
-	transition: all 0.2s ease-in-out 0s;
-	outline: rgb(255, 255, 255) dashed 0px;
-	outline-offset: 0px;
-	box-sizing: border-box;
-	resize: none;
-	text-shadow: none;
-	text-overflow: clip;
-	word-wrap: normal;
-	box-shadow: none;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-}
-
-
-
-/* Media Rules */
-
-@media screen and (min-width: 900px) {
-
-}
+/* .sidenav a:before, .sidenav a:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 10px;
+  height: 5px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.75s;
+  opacity: 1;
+  background-color: red;
+} */

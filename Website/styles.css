@@ -55,6 +55,7 @@ header {
 a{
   color: #1c2e37;
   font-family: 'AcuminPro';
+  text-decoration: none;
 }
 
 h1{
@@ -146,13 +147,13 @@ font-style: normal; */
  left: 0;
  background-color: #dadada; /* Black*/
  overflow-x: hidden; /* Disable horizontal scroll */
- padding-top: 60px; /* Place content 60px from the top */
+ padding-top: 0px; /* Place content 0px from the top -- needed to make the animation work */
  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav .navoption {
  padding: 8px 8px 8px 32px;
  text-decoration: none;
  font-size: 25px;
@@ -162,9 +163,7 @@ font-style: normal; */
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
- color: #f7c86f;
-}
+
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
@@ -174,6 +173,44 @@ font-style: normal; */
  font-size: 36px;
  margin-left: 50px;
 }
+
+.navoption a{
+  position: relative;
+  /* The position of the underline is based on this */
+}
+
+.sidenav a:before, .sidenav a:after {
+  z-index: 5;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 10px;
+  height: 5px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.75s;
+  opacity: 1;
+  background-color: #1c2e37;;
+}
+
+.sidenav a:before{
+  left: 50%;
+}
+
+.sidenav a:after{
+  right: 50%;
+}
+
+.sidenav a:hover{
+  color: #f7c86f;
+}
+
+.navoption:hover a:before,
+.navoption:hover a:after{
+  width: 50%
+}
+
+
 
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -191,14 +228,17 @@ font-style: normal; */
 /* My Stuff */
 
 .menu-button{
-  height: 32px;
+  height: 5vh;
   position: relative;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  /* top: 10px;
-  left: 10px; */
+  margin: 2vh;
+}
+
+.x-button{
+  height: 5vh;
+  position: relative;
+  top: 0px;
+  left: calc(250px - 12vh);
+  margin: 3.5vh;
 }
 
 .header-container{
@@ -252,18 +292,6 @@ font-style: normal; */
 }
 
 
-
-.arrow {
-  border: solid #dadada;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
 
 .logomain{
   height: 100px;

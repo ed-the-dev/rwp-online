@@ -2,145 +2,47 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tester</title>
-    <link rel="stylesheet" href="https://use.typekit.net/byn5ydl.css">
+    <title>Test</title>
     <link rel='stylesheet' href='teststyles.css'/>
-
-    <script type="text/javascript">
-      window.onscroll = function() {myFunction()};
-
-      function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var displayHeight = document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
-      // document.getElementById("logotopright").style.opacity = winScroll/displayHeight;
-
-      console.log(winScroll);
-
-      }
-    </script>
-
-
-    <script type="text/javascript">
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";}
-
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";}
-    </script>
-
-
   </head>
-
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <!-- <img src="images/right-arrow.svg" alt="Right Arrow" class = "right-arrow" onclick="closeNav()"> -->
-    <a href="#welcome" onclick="closeNav()">Welcome</a>
-    <a href="#about-rwp" onclick="closeNav()">About&nbsp;RWP</a>
-    <a href="#services" onclick="closeNav()">Services</a>
-    <a href="#">Contact</a>
-  </div>
-
-
-
-  <header>
-    <div class="header-container">
-      <img src="images/burger-lines.svg" alt="Menu Button" class = "menu-button" onclick="openNav()">
-      <img src="images/dark.svg" alt="logo" id ="logotopright">
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-bar" id="myBar"></div>
-    </div>
-
-  </header>
-
   <body>
 
+    <main>
 
-    <section class = "blue-background" id = "welcome">
-      <div class="content">
-        <div class="spacer">
+
+
+        <h1>Animated Underline Hover Examples</h1>
+
+
+
+        <div class="example">
+          <span class="hover hover-3">This underline goes outwards</span>
         </div>
-        <!-- <img src="images/dark.svg" alt="logo" class="logomain"> -->
-        <h1>Welcome</h1>
-        <!-- <h1>Complete Technical Service</h1> -->
-        <p>Robert Walpole &&nbsp;Partners is
-          engaged in a wide range of civil and structural engineering works
-          carrying out design, supervision and project management.</p>
 
-        <ul>
+        <div id="mySidenav" class="sidenav">
 
-            <a href="#about-rwp" class="click-area">
-              <li>Services<i class="arrow right"></i></li>
-            </a>
-
-        </ul>
-
-
-
-          <div class="image-container">
-
-
+          <div class="navoption">
+            <a href="#welcome" onclick="closeNav()" id="snwelcome">Welcome</a>
           </div>
-      </div>
+
+          <div class="navoption">
+              <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
+          </div>
+
+          <div class="navoption">
+            <a href="#services" onclick="closeNav()">Services</a>
+          </div>
+
+          
+        </div>
 
 
-    </section>
 
-    <section id = "about-rwp">
 
-      <div class="content">
-        <div class="spacer">
-        <h1>About RWP</h1>
-        <p>The partners of the firm are Jonathan Walpole and Mark Simmons who
-          both started in Civil Engineering at Imperial College in London.</p>
 
-        <p>Partners:</p>
 
-        <ul>
-          <li>M J Walpole BSc(Eng) ACGI CEng MICE M ConsE</li>
-          <li>M W Simmons BSc(Eng) ACGI CEng MICE MCIWEM</li>
-        </ul>
 
-        <p>Association with Surveying, Geotechnical, Mechanical and Electrical
-          Engineering Practices enables the firm to provide a complete technical
-          service for many types of project.
-
-          Amongst the firm’s Clients are public sector clients such as Network
-          Rail, Crossrail and Affinity Water Local and Contractors and private
-          developers.
-
-          It is the policy of the Partners to give a high quality service to all
-          their Clients. Every project is supervised by one of the Partners.</p>
-
-      </div>
-
-    </section>
-
-    <section class = "blue-background" id="services">
-      <div class="content">
-        <h1>Engineering Services</h1>
-        <p>Our services include the following:</p>
-        <ul>
-          <li>
-            <div class="test">Strategy</div>
-          </li>
-          <li>Civil Engineering</li>
-          <li>Structural Engineering</li>
-          <li>Water</li>
-          <li>Rail</li>
-          <li>Roads and Drainage</li>
-          <li>Infrastructure</li>
-        </ul>
-
-      </div>
-    </section>
-
+    </main>
 
 
   </body>

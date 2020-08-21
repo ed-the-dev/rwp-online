@@ -6,43 +6,38 @@
     <title>RWP - Home</title>
     <link rel="stylesheet" href="https://use.typekit.net/byn5ydl.css">
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css">
 
-    <script type="text/javascript">
-      window.onscroll = function() {myFunction()};
-
-      function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var displayHeight = document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
-      // document.getElementById("logotopright").style.opacity = winScroll/displayHeight;
-
-      console.log(winScroll);
-
-      }
-    </script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="aos.js"></script>
 
 
-    <script type="text/javascript">
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";}
-
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";}
-    </script>
 
 
   </head>
 
   <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <!-- <img src="images/right-arrow.svg" alt="Right Arrow" class = "right-arrow" onclick="closeNav()"> -->
-    <a href="#welcome" onclick="closeNav()">Welcome</a>
-    <a href="#about-rwp" onclick="closeNav()">About&nbsp;RWP</a>
-    <a href="#services" onclick="closeNav()">Services</a>
-    <a href="#">Contact</a>
+    <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
+
+    <div class="navoption">
+      <a href="#welcome" onclick="closeNav()" id="snwelcome">Welcome</a>
+    </div>
+
+    <div class="navoption">
+        <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
+    </div>
+
+    <div class="navoption">
+        <a href="#services" onclick="closeNav()" id="snservices">Services</a>
+    </div>
+
+    <div class="navoption">
+        <a href="#">Contact</a>
+    </div>
+
+
+
+
   </div>
 
 
@@ -64,19 +59,19 @@
 
     <section class = "blue-background" id = "welcome">
       <div class="content">
-        <div class="spacer">
-        </div>
         <!-- <img src="images/dark.svg" alt="logo" class="logomain"> -->
-        <h1>Welcome</h1>
+        <h1 data-aos="fade-up"
+        >Welcome</h1>
         <!-- <h1>Complete Technical Service</h1> -->
-        <p>Robert Walpole &&nbsp;Partners is
+        <p data-aos="fade"
+        >Robert Walpole &&nbsp;Partners is
           engaged in a wide range of civil and structural engineering works
           carrying out design, supervision and project management.</p>
 
-        <ul>
+        <ul data-aos="fade-down">
 
             <a href="#about-rwp" class="click-area">
-              <li>Services<i class="arrow right"></i></li>
+              <li>Services&rArr;</li>
             </a>
 
         </ul>
@@ -96,8 +91,10 @@
 
       <div class="content">
         <div class="spacer">
-        <h1>About RWP</h1>
-        <p>The partners of the firm are Jonathan Walpole and Mark Simmons who
+        <h1 data-aos="fade-up"
+        data-aos-delay="300"
+        >About RWP</h1>
+        <p>The partners of the firm are Jonathan&nbsp;Walpole and Mark&nbsp;Simmons who
           both started in Civil Engineering at Imperial College in London.</p>
 
         <p>Partners:</p>
@@ -142,6 +139,13 @@
     </section>
 
 
-
+    <script>
+      AOS.init(
+        {once: true,
+        easing: 'ease-out',
+        duration: 500}
+        // {duration: 1000}
+      )
+    </script>
   </body>
 </html>
