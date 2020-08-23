@@ -24,19 +24,24 @@
     </div>
 
     <div class="navoption">
-        <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
-    </div>
-
-    <div class="navoption">
         <a href="#services" onclick="closeNav()" id="snservices">Services</a>
     </div>
 
     <div class="navoption">
-        <a href="#">Contact</a>
+        <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
     </div>
 
+    <div class="navoption">
+        <a href="#contact" onclick="closeNav()" id="sncontact">Contact</a>
+    </div>
 
+    <div class="navoption">
+        <a href="#careers" onclick="closeNav()" id="sncareers">Careers</a>
+    </div>
 
+    <div class="navoption">
+        <a href="#company" onclick="closeNav()" id="sncompany">Company</a>
+    </div>
 
   </div>
 
@@ -59,19 +64,21 @@
 
     <section class = "blue-background" id = "welcome">
       <div class="content">
-        <!-- <img src="images/dark.svg" alt="logo" class="logomain"> -->
         <h1 data-aos="fade-up"
+        data-aos-delay="0"
         >Welcome</h1>
-        <!-- <h1>Complete Technical Service</h1> -->
+
         <p data-aos="fade"
+        data-aos-delay="0"
         >Robert Walpole &&nbsp;Partners is
           engaged in a wide range of civil and structural engineering works
           carrying out design, supervision and project management.</p>
 
-        <ul data-aos="fade-down">
+        <ul data-aos="fade-down"
+        data-aos-delay="0">
 
-            <a href="#about-rwp" class="click-area">
-              <li>Services&rArr;</li>
+            <a href="#services">
+              <li>Services&#x2794;</li>
             </a>
 
         </ul>
@@ -87,55 +94,150 @@
 
     </section>
 
-    <section id = "about-rwp">
+    <section id="services">
+      <div class="content">
+        <h1 data-aos="fade-up">
+        Engineering Services</h1>
+
+        <p data-aos="fade">
+        Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
+        service for many types of project.</p>
+
+        <p data-aos="fade">
+        Our services include the following:</p>
+        <ul data-aos="fade-down">
+          <li>Civil</li>
+          <li>Structural</li>
+          <li>Water</li>
+          <li>Rail</li>
+          <li>Roads</li>
+          <li>Drainage</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="blue-background" id = "about-rwp">
 
       <div class="content">
-        <div class="spacer">
-        <h1 data-aos="fade-up"
-        data-aos-delay="300"
-        >About RWP</h1>
-        <p>The partners of the firm are Jonathan&nbsp;Walpole and Mark&nbsp;Simmons who
-          both started in Civil Engineering at Imperial College in London.</p>
+        <h1 data-aos="fade-up">
+        About RWP</h1>
 
-        <p>Partners:</p>
+        <p data-aos="fade">
+        We work with geotechnical, mechanical and electrical
+        engineering practices to provide a complete technical service.</p>
+
+        <p data-aos="fade-down">
+        Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
+        Affinity&nbsp;Water.</p>
+
+
+
+        <!-- <h2>Partners:</h2>
 
         <ul>
           <li>M J Walpole BSc(Eng) ACGI CEng MICE M ConsE</li>
           <li>M W Simmons BSc(Eng) ACGI CEng MICE MCIWEM</li>
-        </ul>
+        </ul> -->
 
-        <p>Association with Surveying, Geotechnical, Mechanical and Electrical
-          Engineering Practices enables the firm to provide a complete technical
-          service for many types of project.
-
-          Amongst the firm’s Clients are public sector clients such as Network
-          Rail, Crossrail and Affinity Water Local and Contractors and private
-          developers.
-
-          It is the policy of the Partners to give a high quality service to all
-          their Clients. Every project is supervised by one of the Partners.</p>
+          <!-- It is the policy of the Partners to give a high quality service to all
+          their Clients. Every project is supervised by one of the Partners. -->
 
       </div>
 
     </section>
 
-    <section class = "blue-background" id="services">
+    <section id="contact">
       <div class="content">
-        <h1>Engineering Services</h1>
-        <p>Our services include the following:</p>
-        <ul>
-          <li>
-            <div class="test">Strategy</div>
-          </li>
-          <li>Civil Engineering</li>
-          <li>Structural Engineering</li>
-          <li>Water</li>
-          <li>Rail</li>
-          <li>Roads and Drainage</li>
-          <li>Infrastructure</li>
+
+        <h1 data-aos="fade-up"
+        >Contact</h1>
+
+        <p data-aos="fade"
+        > Get in touch:</p>
+
+        <!-- We have provided quality solutions for some of the UK's largest contractors. -->
+
+        <ul data-aos="fade">
+
+          <a href="tel:01753-530-836">
+            <li>01753 530836 	&#x260E;</li>
+          </a>
+
+          <a href="mailto:admin@rwalpole.globalnet.co.uk">
+            <li>Email &#x2709;</li></a>
+
+        </ul>
+
+        <p data-aos="fade">
+        Location:</p>
+
+        <div data-aos="fade-down" id="map"></div>
+
+        <script>
+          function initMap() {
+          var rwp = {lat: 51.525711, lng: -0.633169};
+          var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: RWP});
+          var marker = new google.maps.Marker({position: rwp, map: map});
+          }
+        </script>
+
+        <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9ds3q6OPsz1TczQ0CULedcU7EZbYeUo&callback=initMap">
+        </script>
+
+      </div>
+    </section>
+
+    <section class="blue-background" id="careers">
+      <div class="content">
+
+        <h1 data-aos="fade-up">
+        Careers</h1>
+
+        <p data-aos="fade">
+        We are looking for graduate and experienced engineers.
+        RWP have an ICE training scheme. We also offer industrial placement years
+        and summer placements.</p>
+
+
+        <ul data-aos="fade-down">
+
+            <a href="#nothing">
+              <li>Find Out More &#x2794;</li>
+            </a>
+
         </ul>
 
       </div>
+    </section>
+
+    <section id="company">
+      <div class="content">
+
+        <h1 data-aos="fade-up">
+        Company</h1>
+
+        <ul data-aos="fade-down">
+
+            <a href="#nothing">
+              <li>Company Policies &#x2794;</li>
+            </a>
+            <a href="#nothing">
+              <li>Partners &#x2794;</li>
+            </a>
+            <a href="#nothing">
+              <li>Case Studies &#x2794;</li>
+            </a>
+        </ul>
+
+
+
+
+
+      </div>
+
     </section>
 
 
@@ -143,7 +245,8 @@
       AOS.init(
         {once: true,
         easing: 'ease-out',
-        duration: 500}
+        duration: 500,
+        delay: 100}
         // {duration: 1000}
       )
     </script>
