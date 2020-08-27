@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Home</title>
     <link rel="stylesheet" href="https://use.typekit.net/byn5ydl.css">
     <link rel='stylesheet' href='styles.css'/>
@@ -58,6 +58,35 @@
     </div>
 
   </header>
+
+  <div class="mapcontainer">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
+      frameborder="0" style="border:0;"
+      allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+      <button type="button" name="closemapbutton">Close Map</button>
+    </div>
+
+      <!-- <div data-aos="fade-down" id="map"></div>
+
+      <script>
+        function initMap() {
+        var rwp = {lat: 51.525711, lng: -0.633169};
+        var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 15, center: rwp});
+        var marker = new google.maps.Marker({position: rwp, map: map});
+        }
+      </script>
+
+      <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9ds3q6OPsz1TczQ0CULedcU7EZbYeUo&callback=initMap">
+      </script>-->
+
+
+
+
+  </div>
 
   <body>
 
@@ -131,18 +160,6 @@
         Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
         Affinity&nbsp;Water.</p>
 
-
-
-        <!-- <h2>Partners:</h2>
-
-        <ul>
-          <li>M J Walpole BSc(Eng) ACGI CEng MICE M ConsE</li>
-          <li>M W Simmons BSc(Eng) ACGI CEng MICE MCIWEM</li>
-        </ul> -->
-
-          <!-- It is the policy of the Partners to give a high quality service to all
-          their Clients. Every project is supervised by one of the Partners. -->
-
       </div>
 
     </section>
@@ -155,9 +172,6 @@
 
         <p data-aos="fade"
         > Get in touch:</p>
-
-        <!-- We have provided quality solutions for some of the UK's largest contractors. -->
-
         <ul data-aos="fade">
 
           <a href="tel:01753-530-836">
@@ -172,20 +186,15 @@
         <p data-aos="fade">
         Location:</p>
 
-        <div data-aos="fade-down" id="map"></div>
+        <address data-aos="fade">
+          10 Banbury Avenue<br>
+          Slough, Berkshire<br>
+          SL1 4LH<br>
+        </address>
 
-        <script>
-          function initMap() {
-          var rwp = {lat: 51.525711, lng: -0.633169};
-          var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: RWP});
-          var marker = new google.maps.Marker({position: rwp, map: map});
-          }
-        </script>
+        <button type="button" name="mapbutton">Open Map &#x2691;</button>
 
-        <script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9ds3q6OPsz1TczQ0CULedcU7EZbYeUo&callback=initMap">
-        </script>
+
 
       </div>
     </section>
@@ -251,4 +260,5 @@
       )
     </script>
   </body>
+
 </html>

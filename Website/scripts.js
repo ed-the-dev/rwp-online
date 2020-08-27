@@ -1,3 +1,8 @@
+// function loadorder() {
+//     document.getElementById("iframename").src= "https://news02ycombinator02com2.mentionusercontent.net/item?id=8357207#up_8360397";
+//     window.scrollTo(0,0);
+
+
 window.onscroll = function() {progressIndicator()};
 
 function progressIndicator() {
@@ -82,8 +87,6 @@ switch (section) {
 
 
 
-  // I need the height of the display next. Then calculate which box is taking up the most space on the display.
-
 }
 
 function openNav() {
@@ -107,21 +110,3 @@ function indexOfMax(arr) {
   }
   return maxIndex;
 }
-
-
-
-// var about_rwp = document.getElementById('about-rwp');
-
-// window.onscroll = function(){navigationEmph()};
-//
-// function navigationEmph(){
-//
-//
-//   // console.log(boundin.top - bounding.bottom);
-//
-//
-//
-
-//
-//   )
-// }

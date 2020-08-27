@@ -27,7 +27,8 @@ body{
 section{
 
   scroll-snap-align: start;
-  min-height: 88.5vh;
+  min-height: 88.6vh;
+  /* Because weird issue where it wouldn't quite sit at the bottom */
   max-height: max-content;
   display: flex;
   justify-content: center;
@@ -61,11 +62,9 @@ a{
 h1{
   color: #1c2e37;
   font-family: 'AcuminProBold';
-  /* margin-left: 10px; */
 
   margin: 3vh;
-
-  font-size: 6vh;
+  font-size: 10vw;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -77,10 +76,20 @@ h1{
 	word-spacing: 0px;
 
   transition-timing-function: ease-out;
-
 }
 
+
 p{
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  margin: 2.5vh;
+  font-size: 3vh;
+	letter-spacing: 2.5px;
+	line-height: 4vh;
+	text-align: left;
+}
+
+address{
   color: #1c2e37;
   font-family: 'AcuminPro';
   margin: 2.5vh;
@@ -107,6 +116,22 @@ li{
   border-radius: 10px; */
   border: 3px solid #f7c86f;
   margin: 10px;
+}
+
+button{
+  list-style-type: none;
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  margin: 2.5vh;
+  font-size: 3vh;
+	letter-spacing: 2.5px;
+	line-height: 4vh;
+	text-align: left;
+  padding: 5px 2px 2px 5px;
+  border-radius: 5px 10px 5px;
+  border: 3px solid #f7c86f;
+  margin: 10px;
+  background-color: inherit;
 }
 
 .blue-background li{
@@ -278,12 +303,37 @@ font-style: normal; */
   color: #dadada;
 }
 
-#map{
+.mapcontainer{
+  background-color: #1c2e37;
+  position: fixed;
+  top: 0;
+  z-index: -1;
   width: 100%;
-   height: 400px;
-   background-color: grey;
+
+  /* flex-direction:  */
 }
 
+.map{
+  display: flex;
+  justify-content: center;
+}
+
+iframe{
+
+  margin: 20px;
+
+  /* width: 90%; */
+  height: 60vh;
+  background-color: grey;
+  /* padding: 2.5vh; */
+  /* margin: 2.5vh; */
+}
+
+#map{
+  margin: 20px;
+  height: 60vh;
+  background-color: grey;
+}
 
 
 
