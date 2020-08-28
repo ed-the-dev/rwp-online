@@ -1,8 +1,3 @@
-// function loadorder() {
-//     document.getElementById("iframename").src= "https://news02ycombinator02com2.mentionusercontent.net/item?id=8357207#up_8360397";
-//     window.scrollTo(0,0);
-
-
 window.onscroll = function() {progressIndicator()};
 
 function progressIndicator() {
