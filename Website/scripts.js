@@ -105,3 +105,12 @@ function indexOfMax(arr) {
   }
   return maxIndex;
 }
+
+function showMap() {
+  console.log("Button Clicked");
+  document.getElementById("withmap").classList.add("show")
+}
+
+function hideMap(){
+  document.getElementById("withmap").classList.remove("show")
+}

@@ -59,24 +59,7 @@
 
   </header>
 
-  <div class="popup">
-    <div class="mapcontainer">
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
-        frameborder="0" style="border:0;"
-        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-      </div>
-
-      <button type="button" name="closemapbutton" class="dark">Close Map &#x2691;</button>
-
-
-    </div>
-
-
-
-
-  </div>
 
 
 
@@ -150,7 +133,7 @@
     </section>
 
     <section id="contact">
-      <div class="content">
+      <div class="content" id="withmap">
 
         <h1 data-aos="fade-up"
         >Contact</h1>
@@ -164,7 +147,7 @@
           </a>
 
           <a href="mailto:admin@rwalpole.globalnet.co.uk">
-            <li>Email &#x2709;</li></a>
+            <li style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
 
         </ul>
 
@@ -177,9 +160,21 @@
           SL1 4LH<br>
         </address>
 
-        <button type="button" name="mapbutton">Open Map &#x2691;</button>
+        <button onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
 
+        <div class="popup">
+          <div class="mapcontainer">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
+              frameborder="0" style="border:0;"
+              allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
+            </div>
+
+            <button onclick="hideMap()" type="button" name="closemapbutton" class="dark">Close Map &#x2691;</button>
+
+          </div>
+        </div>
 
       </div>
     </section>
