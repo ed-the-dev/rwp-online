@@ -16,7 +16,9 @@
 
 /* Scroll Snapping */
 html{
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
+  -webkit-overflow-scrolling: touch;
+  /* fox for iOS */
   scroll-behavior:smooth;
   scroll-padding-top: 11.5vh;
 }
