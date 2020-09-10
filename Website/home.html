@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='styles.css'/>
     <link rel="stylesheet" href="aos.css"/>
 
-    <script type="text/javascript" src="scripts.js"></script>
+
     <script type="text/javascript" src="aos.js"></script>
 
 
@@ -48,11 +48,6 @@
 
 
 
-
-
-
-
-
   <body>
 
     <header>
@@ -67,19 +62,19 @@
 
     </header>
 
-    <article>
+    <article onscroll="scrolling(); " id="article">
 
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 data-aos="fade"
+          <h1 class="show-on-scroll"
           >Welcome</h1>
 
-          <p data-aos="fade"
-          >Robert Walpole &&nbsp;Partners is
+          <p class="show-on-scroll">
+            Robert Walpole &&nbsp;Partners is
             engaged in a wide range of civil and structural engineering works
             carrying out design, supervision and project management.</p>
 
-          <ul data-aos="fade">
+          <ul class="show-on-scroll">
 
               <a href="#services">
                 <li>Services&#x2794;</li>
@@ -95,16 +90,16 @@
 
       <section id="services">
         <div class="content">
-          <h1 data-aos="fade-up">
+          <h1 class="show-on-scroll">
           Engineering Services</h1>
 
-          <p data-aos="fade">
+          <p class="show-on-scroll">
           Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
           service for many types of project.</p>
 
-          <p data-aos="fade">
+          <p class="show-on-scroll">
           Our services include the following:</p>
-          <ul data-aos="fade-down">
+          <ul class="show-on-scroll">
             <li>Civil</li>
             <li>Structural</li>
             <li>Water</li>
@@ -226,26 +221,38 @@
 
 
 
-  
+
         </div>
 
       </section>
+
+      <script>
+        AOS.init(
+          {once: true,
+          easing: 'ease-out',
+          duration: 500,
+          delay: 100}
+        )
+      </script>
+
+
 
 
     </article>
 
 
+  <script type="text/javascript" src="scripts.js"></script>
+  <!-- <script type="text/javascript" src="myaos.js"></script> -->
 
-
-    <script>
-      AOS.init(
-        {once: true,
-        easing: 'ease-out',
-        duration: 500,
-        delay: 100}
-        // {duration: 1000}
-      )
-    </script>
   </body>
+
+  <!-- <script>
+    AOS.init(
+      {once: true,
+      easing: 'ease-out',
+      duration: 500,
+      delay: 100}
+    )
+  </script> -->
 
 </html>

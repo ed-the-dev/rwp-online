@@ -14,20 +14,23 @@
   box-sizing: border-box;
 }
 
-/* Scroll Snapping */
 html{
-  scroll-snap-type: y proximity;
-  -webkit-overflow-scrolling: touch;
-  /* fox for iOS */
-  scroll-behavior:smooth;
-  scroll-padding-top: 11.5vh;
 }
 
 body{
 }
 
-section{
+article{
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  width: 100vw;
+  scroll-padding-top: 11.5vh;
+}
 
+section{
   scroll-snap-align: start;
   min-height: 88.6vh;
   /* Because weird issue where it wouldn't quite sit at the bottom */
@@ -36,7 +39,6 @@ section{
   justify-content: center;
   background-color: #dadada;
   position: relative;
-
 }
 
 
@@ -327,16 +329,7 @@ font-style: normal; */
   opacity: 0;
 }
 
-/* .popup.show .mapcontainer{
-  transition: 0.5s;
-  transition-timing-function: ease-out;
-  transform: translateY(0);
-  opacity: 1;
-} */
 
-/* .popup.show{
-  z-index: 0;
-} */
 
 .mapcontainer{
   background-color: #1c2e37;
