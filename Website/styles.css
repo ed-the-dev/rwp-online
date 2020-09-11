@@ -329,7 +329,19 @@ font-style: normal; */
   opacity: 0;
 }
 
+.show-on-scroll {
+  transform: translateY(130%);
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+  opacity: 0;
+}
 
+.show-on-scroll.is-visible{
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+  transform: translateY(0);
+  opacity: 1;
+}
 
 .mapcontainer{
   background-color: #1c2e37;
