@@ -1,6 +1,7 @@
 var sections = document.getElementsByClassName("content");
 var displayHeight = document.documentElement.clientHeight;
 
+// viewport height a bit funky but will be easily amended when I set the height of the header in pixels
 
 function scrolling() {
   var winScroll = document.getElementById("article").scrollTop;
@@ -18,15 +19,29 @@ function scrolling() {
   // Ternary Operator
   // ( condition ) ? run this code : run this code instead
 
-  let welcomeArea = (welcome.top < 0) ? welcome.bottom : height - welcome.bottom;
-  let servicesArea = (services.top < 0) ? services.bottom : height - services.bottom;
-  let aboutRwpArea = (aboutRwp.top < 0) ? aboutRwp.bottom : height - aboutRwp.bottom;
-  let contactArea = (contact.top < 0) ? contact.bottom : height - contact.bottom;
-  let careersArea = (careers.top < 0) ? careers.bottom : height - careers.bottom;
-  let companyArea = (company.top < 0) ? company.bottom : height - company.bottom;
+  let welcomeArea = (welcome.top < 0) ? welcome.bottom : displayHeight - welcome.top;
+  let servicesArea = (services.top < 0) ? services.bottom : displayHeight - services.top;
+  let aboutRwpArea = (aboutRwp.top < 0) ? aboutRwp.bottom : displayHeight - aboutRwp.top;
+  let contactArea = (contact.top < 0) ? contact.bottom : displayHeight - contact.top;
+  let careersArea = (careers.top < 0) ? careers.bottom : displayHeight - careers.top;
+  let companyArea = (company.top < 0) ? company.bottom : displayHeight - company.top;
 
   let areas = [welcomeArea, servicesArea, aboutRwpArea, contactArea, careersArea, companyArea];
   let section = indexOfMax(areas);
+
+  for (var i = 0; i < areas.length; i++){
+    if (i == section){
+      elements = sections.item(i).getElementsByClassName("show-on-scroll");
+      for (var j = 0; j < elements.length; j++) {
+        elements.item(j).classList.add('is-visible');
+      }
+    } else {
+      elements = sections.item(i).getElementsByClassName("show-on-scroll");
+      for (var j = 0; j < elements.length; j++) {
+        elements.item(j).classList.remove('is-visible');
+      }
+    }
+  }
 
   switch (section) {
     case 0: // welcome
@@ -64,22 +79,6 @@ function scrolling() {
       break;
 
     }
-
-  // A N I M A T E  O N  S C R O L L //
-
-  for (var i = 0; i < sections.length; i++) {
-    if (isSectinVp(sections.item(i))) {
-      elements = sections.item(i).getElementsByClassName("show-on-scroll");
-      for (var j = 0; j < elements.length; j++) {
-        elements.item(j).classList.add('is-visible');
-      }
-    } else {
-      elements = sections.item(i).getElementsByClassName("show-on-scroll");
-      for (var j = 0; j < elements.length; j++) {
-        elements.item(j).classList.remove('is-visible');
-      }
-    }
-  }
 }
 
 
@@ -112,12 +111,4 @@ function showMap() {
 
 function hideMap(){
   document.getElementById("withmap").classList.remove("show")
-}
-
-function isSectinVp(section){
-  if(section.getBoundingClientRect().top > -1 && section.getBoundingClientRect().top <= displayHeight){
-    return true;
-  } else {
-    return false;
-  }
 }

@@ -21,13 +21,15 @@ body{
 }
 
 article{
+  position: fixed;
+  top: 11.5vh;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
-  max-height: 100vh;
+  max-height: 88.5vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
   width: 100vw;
-  scroll-padding-top: 11.5vh;
+  /* scroll-padding-top: 11.5vh; */
 }
 
 section{
@@ -280,6 +282,7 @@ font-style: normal; */
   padding-right: 5px;
   padding-bottom: 5px;
   opacity: 1.0;
+  padding: 5px;
 }
 
 .content{
