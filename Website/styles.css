@@ -14,28 +14,29 @@
   box-sizing: border-box;
 }
 
-html{
+html, body{
+  height: 100%;
+  overscroll-behavior: none;
 }
 
-body{
-}
 
 article{
   position: fixed;
-  top: 11.5vh;
-  scroll-snap-type: y mandatory;
+  top: 64px;
+  scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
-  max-height: 88.5vh;
+  height:calc(100% - 64px);
+  height:-moz-calc(100% - 64px);
+  height:-webkit-calc(100% - 64px);
   overflow-y: scroll;
   scroll-behavior: smooth;
   width: 100vw;
-  /* scroll-padding-top: 11.5vh; */
+  overscroll-behavior: none;
 }
 
 section{
   scroll-snap-align: start;
-  min-height: 88.6vh;
-  /* Because weird issue where it wouldn't quite sit at the bottom */
+  min-height: 100%;
   max-height: max-content;
   display: flex;
   justify-content: center;
@@ -43,14 +44,10 @@ section{
   position: relative;
 }
 
-
-#welcome{
-    height: 100vh;
-}
-
 /* SCROLL PROGRESS */
 
 header {
+  overscroll-behavior: auto;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -118,8 +115,6 @@ li{
 
   padding: 5px 2px 2px 5px;
   border-radius: 5px 10px 5px;
-/*
-  border-radius: 10px; */
   border: 3px solid #f7c86f;
   margin: 10px;
 }
@@ -128,7 +123,7 @@ button{
   list-style-type: none;
   color: #1c2e37;
   font-family: 'AcuminPro';
-  margin: 2.5vh;
+  /* margin: 2.5vh; */
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -144,18 +139,10 @@ button{
   color: #dadada;
 }
 
-/* LIGHT */
-
-/* font-family: ambroise-francois-std,serif;
-font-weight: 300;
-font-style: normal; */
-
-/* The progress container (grey background) */
 .progress-container {
   width: 100%;
   height: 4px;
   background: #dadada;
-  /* background: #1c2e37; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -192,9 +179,6 @@ font-style: normal; */
  display: block;
  transition: 0.3s;
 }
-
-/* When you mouse over the navigation links, change their color */
-
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
@@ -256,9 +240,9 @@ font-style: normal; */
 /* My Stuff */
 
 .menu-button{
-  height: 5vh;
+  height: 35px;
   position: relative;
-  margin: 2vh;
+  margin: 10px;
 }
 
 .x-button{
@@ -277,7 +261,7 @@ font-style: normal; */
 }
 
 #logotopright{
-  height: 11.5vh;
+  height: 60px;
   margin-left: auto;
   padding-right: 5px;
   padding-bottom: 5px;
@@ -299,7 +283,6 @@ font-style: normal; */
 
 .blue-background{
   background-color: #1c2e37;
-  /* scroll-snap-align: start; */
 }
 
 .blue-background h1{
@@ -311,9 +294,10 @@ font-style: normal; */
 }
 
 .popup{
-  height: 87.5vh;
+  height:calc(100% - 64px);
+  /* height: 100%; */
   width: 100%;
-  top: 12.5vh;
+  top: 64px;
   left:0;
   position: fixed;
 }
@@ -321,28 +305,49 @@ font-style: normal; */
 .content.show .popup{
   transition: 0.5s;
   transition-timing-function: ease-out;
-  transform: translateY(0);
+  transform: translate(0);
   opacity: 1;
+  z-index: 1;
+  will-change: transform;
 }
 
 .popup{
-  transform: translateY(130%);
+  transform: translate(-100%);
   transition-timing-function: ease-in;
   transition: 0.5s;
-  opacity: 0;
+  z-index: 1;
+  opacity: 1;
+  will-change: transform;
+  padding: 2vh;
 }
 
 .show-on-scroll {
-  transform: translateY(130%);
   transition-timing-function: ease-in;
   transition: 0.5s;
   opacity: 0;
+  will-change: transform;
+}
+
+.top{
+  transform: translate(0, -10%);
+  will-change: transform;
+}
+
+.middle{
+  /* transform: translate(0, 5%); */
+  will-change: transform;
+}
+
+.bottom{
+  /* transform: translate(0, 5%); */
+  will-change: transform;
 }
 
 .show-on-scroll.is-visible{
   transition: 0.5s;
   transition-timing-function: ease-out;
-  transform: translateY(0);
+  transform: translate(0);
+  will-change: transform;
   opacity: 1;
 }
 
@@ -352,21 +357,23 @@ font-style: normal; */
 
   /* border-radius: 25px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin: 2vh;
-  height: max-content;
+  min-height: max-content;
+  height: 100%;
 
 }
 
 .map{
   display: flex;
   justify-content: center;
+  /* height: 80%; */
+  height:calc(100% - 78px);
 }
 
 
 iframe{
   margin: 20px;
   width: 90%;
-  height: 65vh;
+  height:calc(100% - 40px);
   background-color: grey;
 }
 

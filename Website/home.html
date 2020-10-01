@@ -8,35 +8,6 @@
 
   </head>
 
-  <div id="mySidenav" class="sidenav">
-    <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
-
-    <div class="navoption">
-      <a href="#welcome" onclick="closeNav()" id="snwelcome">Welcome</a>
-    </div>
-
-    <div class="navoption">
-        <a href="#services" onclick="closeNav()" id="snservices">Services</a>
-    </div>
-
-    <div class="navoption">
-        <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
-    </div>
-
-    <div class="navoption">
-        <a href="#contact" onclick="closeNav()" id="sncontact">Contact</a>
-    </div>
-
-    <div class="navoption">
-        <a href="#careers" onclick="closeNav()" id="sncareers">Careers</a>
-    </div>
-
-    <div class="navoption">
-        <a href="#company" onclick="closeNav()" id="sncompany">Company</a>
-    </div>
-
-  </div>
-
 
 
 
@@ -46,6 +17,36 @@
     <header>
       <div class="header-container">
         <img src="images/burger-lines.svg" alt="Menu Button" class = "menu-button" onclick="openNav()">
+
+        <div id="mySidenav" class="sidenav">
+          <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
+
+          <div class="navoption">
+            <a href="#welcome" onclick="closeNav()" id="snwelcome">Welcome</a>
+          </div>
+
+          <div class="navoption">
+              <a href="#services" onclick="closeNav()" id="snservices">Services</a>
+          </div>
+
+          <div class="navoption">
+              <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
+          </div>
+
+          <div class="navoption">
+              <a href="#contact" onclick="closeNav()" id="sncontact">Contact</a>
+          </div>
+
+          <div class="navoption">
+              <a href="#careers" onclick="closeNav()" id="sncareers">Careers</a>
+          </div>
+
+          <div class="navoption">
+              <a href="#company" onclick="closeNav()" id="sncompany">Company</a>
+          </div>
+
+        </div>
+
         <img src="images/dark.svg" alt="logo" id ="logotopright">
       </div>
 
@@ -59,15 +60,15 @@
 
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 class="show-on-scroll is-visible"
+          <h1 class="show-on-scroll top is-visible"
           >Welcome</h1>
 
-          <p class="show-on-scroll is-visible">
+          <p class="show-on-scroll middle is-visible">
             Robert Walpole &&nbsp;Partners is
             engaged in a wide range of civil and structural engineering works
             carrying out design, supervision and project management.</p>
 
-          <ul class="show-on-scroll is-visible">
+          <ul class="show-on-scroll bottom is-visible">
 
               <a href="#services">
                 <li>Services&#x2794;</li>
@@ -83,16 +84,16 @@
 
       <section id="services">
         <div class="content">
-          <h1 class="show-on-scroll">
+          <h1 class="show-on-scroll top">
           Engineering Services</h1>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll middle">
           Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
           service for many types of project.</p>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll middle">
           Our services include the following:</p>
-          <ul class="show-on-scroll">
+          <ul class="show-on-scroll bottom">
             <li>Civil</li>
             <li>Structural</li>
             <li>Water</li>
@@ -107,14 +108,14 @@
       <section class="blue-background" id = "about-rwp">
 
         <div class="content">
-          <h1 class="show-on-scroll">
+          <h1 class="show-on-scroll top">
           About RWP</h1>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll middle">
           We work with geotechnical, mechanical and electrical
           engineering practices to provide a complete technical service.</p>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll bottom">
           Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
           Affinity&nbsp;Water.</p>
 
@@ -125,12 +126,12 @@
       <section id="contact">
         <div class="content" id="withmap">
 
-          <h1 class="show-on-scroll"
+          <h1 class="show-on-scroll top"
           >Contact</h1>
 
-          <p class="show-on-scroll"
+          <p class="show-on-scroll middle"
           > Get in touch:</p>
-          <ul class="show-on-scroll">
+          <ul class="show-on-scroll middle">
 
             <a href="tel:01753-530-836">
               <li>01753 530836 	&#x260E;</li>
@@ -141,16 +142,16 @@
 
           </ul>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll middle">
           Location:</p>
 
-          <address class="show-on-scroll">
+          <address class="show-on-scroll middle">
             10 Banbury Avenue<br>
             Slough, Berkshire<br>
             SL1 4LH<br>
           </address>
 
-          <button onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
+          <button class="show-on-scroll bottom" onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
 
           <div class="popup">
             <div class="mapcontainer">
@@ -172,16 +173,16 @@
       <section class="blue-background" id="careers">
         <div class="content">
 
-          <h1 class="show-on-scroll">
+          <h1 class="show-on-scroll top">
           Careers</h1>
 
-          <p class="show-on-scroll">
+          <p class="show-on-scroll middle">
           We are looking for graduate and experienced engineers.
           RWP have an ICE training scheme. We also offer industrial placement years
           and summer placements.</p>
 
 
-          <ul class="show-on-scroll">
+          <ul class="show-on-scroll bottom">
 
               <a href="#nothing">
                 <li>Find Out More &#x2794;</li>
@@ -195,10 +196,10 @@
       <section id="company">
         <div class="content">
 
-          <h1 class="show-on-scroll">
+          <h1 class="show-on-scroll top">
           Company</h1>
 
-          <ul class="show-on-scroll">
+          <ul class="show-on-scroll bottom">
 
               <a href="#nothing">
                 <li>Company Policies &#x2794;</li>
