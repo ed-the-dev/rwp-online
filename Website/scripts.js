@@ -198,11 +198,17 @@ function scrolling() {
 
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";}
+  // document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").classList.add("show")
+  document.getElementById("withmap").classList.remove("show")
+}
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";}
+  // document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").classList.remove("show")
+
+}
 
 
 function indexOfMax(arr) {

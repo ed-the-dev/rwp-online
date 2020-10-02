@@ -65,8 +65,7 @@ a{
 h1{
   color: #1c2e37;
   font-family: 'AcuminProBold';
-
-  margin: 3vh;
+  padding: 20px 0;
   font-size: 10vw;
 	font-style: normal;
 	font-variant: normal;
@@ -85,7 +84,7 @@ h1{
 p{
   color: #1c2e37;
   font-family: 'AcuminPro';
-  margin: 2.5vh;
+  padding: 20px 0;
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -95,7 +94,6 @@ p{
 address{
   color: #1c2e37;
   font-family: 'AcuminPro';
-  margin: 2.5vh;
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -106,7 +104,7 @@ li{
   list-style-type: none;
   color: #1c2e37;
   font-family: 'AcuminPro';
-  margin: 2.5vh;
+  /* margin: 2.5vh; */
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -116,7 +114,17 @@ li{
   padding: 5px 2px 2px 5px;
   border-radius: 5px 10px 5px;
   border: 3px solid #f7c86f;
-  margin: 10px;
+  margin: 20px 0;
+}
+
+.grid > ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 16px;
+}
+
+.grid > ul > li{
+  margin: 0;
 }
 
 button{
@@ -131,8 +139,9 @@ button{
   padding: 5px 2px 2px 5px;
   border-radius: 5px 10px 5px;
   border: 3px solid #f7c86f;
-  margin: 10px;
   background-color: inherit;
+  margin: 20px 0;
+  
 }
 
 .blue-background li{
@@ -158,7 +167,7 @@ button{
 /* The side navigation menu */
 .sidenav {
  height: 100%; /* 100% Full-height */
- width: 0; /* 0 width - change this with JavaScript */
+ width: 250px;
  position: fixed; /* Stay in place */
  z-index: 2; /* Stay on top */
  top: 0; /* Stay at the top */
@@ -168,6 +177,20 @@ button{
  padding-top: 0px; /* Place content 0px from the top -- needed to make the animation work */
  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidenav.show{
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+  transform: translate(0);
+  will-change: transform;
+}
+
+.sidenav{
+  transform: translate(-100%);
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+  will-change: transform;
 }
 
 /* The navigation menu links */
@@ -275,7 +298,7 @@ button{
   justify-content: center;
   max-width: 600px;
   max-height: inherit;
-  width: 95%;
+  width: calc(100% - 64px);
   margin-top: 0vh; /* this property will have to change within the media rules
                         scaling on other devices */
 }
