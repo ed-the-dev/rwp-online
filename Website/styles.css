@@ -53,7 +53,6 @@ header {
   z-index: 1;
   width: 100%;
   background-color: #1c2e37;
-
 }
 
 a{
@@ -104,7 +103,6 @@ li{
   list-style-type: none;
   color: #1c2e37;
   font-family: 'AcuminPro';
-  /* margin: 2.5vh; */
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -131,7 +129,6 @@ button{
   list-style-type: none;
   color: #1c2e37;
   font-family: 'AcuminPro';
-  /* margin: 2.5vh; */
   font-size: 3vh;
 	letter-spacing: 2.5px;
 	line-height: 4vh;
@@ -141,7 +138,7 @@ button{
   border: 3px solid #f7c86f;
   background-color: inherit;
   margin: 20px 0;
-  
+
 }
 
 .blue-background li{
@@ -164,23 +161,22 @@ button{
 
 /* Side Navigation */
 
-/* The side navigation menu */
 .sidenav {
  height: 100%; /* 100% Full-height */
  width: 250px;
- position: fixed; /* Stay in place */
- z-index: 2; /* Stay on top */
- top: 0; /* Stay at the top */
+ position: fixed;
+ z-index: 2;
+ top: 0;
  left: 0;
- background-color: #dadada; /* Black*/
- overflow-x: hidden; /* Disable horizontal scroll */
+ background-color: #dadada;
+ overflow-x: hidden;
  padding-top: 0px; /* Place content 0px from the top -- needed to make the animation work */
- transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+ transition: 0.5s;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sidenav.show{
-  transition: 0.5s;
+  transition: 0.25s;
   transition-timing-function: ease-out;
   transform: translate(0);
   will-change: transform;
@@ -189,7 +185,7 @@ button{
 .sidenav{
   transform: translate(-100%);
   transition-timing-function: ease-in;
-  transition: 0.5s;
+  transition: 0.25s;
   will-change: transform;
 }
 
@@ -228,7 +224,7 @@ button{
   transition: all 0.2s ease-in-out;
   transition-duration: 0.3s;
   opacity: 1;
-  background-color: #1c2e37;;
+  background-color: #1c2e37;
 }
 
 .sidenav a:before{
@@ -252,7 +248,6 @@ button{
 .navoption a.current:after{
   width: 50%;
 }
-
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
@@ -292,6 +287,10 @@ button{
   padding: 5px;
 }
 
+#logodarkfull{
+  display: none;
+}
+
 .content{
   display: flex;
   flex-direction: column;
@@ -318,7 +317,6 @@ button{
 
 .popup{
   height:calc(100% - 64px);
-  /* height: 100%; */
   width: 100%;
   top: 64px;
   left:0;
@@ -362,7 +360,6 @@ button{
 }
 
 .bottom{
-  /* transform: translate(0, 5%); */
   will-change: transform;
 }
 
@@ -376,9 +373,6 @@ button{
 
 .mapcontainer{
   background-color: #1c2e37;
-  /* background: linear-gradient(0deg, rgba(28,46,55,1) 75%, rgba(218,218,218,1) 100%); */
-
-  /* border-radius: 25px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   min-height: max-content;
   height: 100%;
@@ -412,6 +406,60 @@ iframe{
 
 /* Media Rules */
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
+
+  .menu-button{
+    display: none;
+    }
+
+  .x-button{
+    display: none;
+  }
+
+  .sidenav {
+  transform: translate(0);
+   height: 100%;
+   width: max-content;
+   position: relative;
+   z-index: 1;
+   background-color: #1c2e37;
+   overflow-x: visible;
+   box-shadow: 0 0 0 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   /* Blue Color: #1c2e37; */
+   /* Yellow Color: #f7c86f; */
+  }
+
+  .navoption > a{
+    color: #dadada;
+  }
+
+  .sidenav .navoption{
+    /* max-width: max-content; */
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+  }
+
+  .sidenav a:before, .sidenav a:after {
+    background-color: #dadada;
+  }
+
+  #logotopright{
+    display: none;
+
+  }
+
+  #logodarkfull{
+    display: block;
+    height: 60px;
+    margin-left: auto;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    opacity: 1.0;
+    padding: 5px;
+  }
 
 }
