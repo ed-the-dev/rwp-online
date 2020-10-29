@@ -108,11 +108,20 @@ li{
 	line-height: 4vh;
 	text-align: left;
 
-
   padding: 5px 2px 2px 5px;
   border-radius: 5px 10px 5px;
   border: 3px solid #f7c86f;
   margin: 20px 0;
+}
+
+#services-button, #findoutmore, #companypolicies, #partners, #casestudies{
+  width: fit-content;
+  padding: 5px 20px 2px 20px;
+}
+
+#phone, #email, #openmap{
+  width: fit-content;
+  padding: 5px 10px 2px 10px;
 }
 
 .grid > ul{
@@ -123,7 +132,14 @@ li{
 
 .grid > ul > li{
   margin: 0;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
 }
+
+
+
+
 
 button{
   list-style-type: none;
@@ -417,20 +433,27 @@ iframe{
   }
 
   .sidenav {
-  transform: translate(0);
-   height: 100%;
-   width: max-content;
-   position: relative;
-   z-index: 1;
-   background-color: #1c2e37;
-   overflow-x: visible;
-   box-shadow: 0 0 0 0;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
+    transform: translate(0);
+    height: 85px;
+    padding: 5px;
+    width: max-content;
+    position: relative;
+    z-index: 1;
+    background-color: #1c2e37;
+    overflow-x: visible;
+    box-shadow: 0 0 0 0;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+
    /* Blue Color: #1c2e37; */
    /* Yellow Color: #f7c86f; */
+  }
+
+  .navoption{
+    align-self: center;
+    justify-self: center;
   }
 
   .navoption > a{
@@ -453,17 +476,59 @@ iframe{
   }
 
   #logodarkfull{
+    order: 1;
     display: block;
-    height: 60px;
-    margin-left: auto;
-    padding-right: 5px;
-    padding-bottom: 5px;
+    height: 85px;
+    margin-right: auto;
     opacity: 1.0;
-    padding: 5px;
+    padding: 10px;
+    margin: 0 0 0 0;
+  }
+
+  #sidenav{
+    order: 2;
   }
 
   h1{
     font-size: 60px;
+  }
+
+  .popup{
+    height:calc(100% - 89px);
+    top: 89px;
+  }
+
+  article{
+    top: 89px;
+    height:calc(100% - 89px);
+    height:-moz-calc(100% - 89px);
+    height:-webkit-calc(100% - 89px);
+  }
+
+  .header-container{
+    flex-direction: row-reverse;
+  }
+
+  .sidenav a:before, .sidenav a:after {
+    height: 4px;
+  }
+
+  .grid > ul{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+
+
+
+}
+
+@media screen and (min-width: 1000px) {
+
+  .sidenav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
 }

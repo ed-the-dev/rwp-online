@@ -18,7 +18,7 @@
       <div class="header-container">
         <img src="images/burger-lines.svg" alt="Menu Button" class = "menu-button" onclick="openNav()">
 
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidenav" id="sidenav">
           <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
 
           <div class="navoption">
@@ -72,7 +72,7 @@
           <ul class="show-on-scroll bottom is-visible">
 
               <a href="#services">
-                <li>Services&#x2794;</li>
+                <li id="services-button">Services&#x2794;</li>
               </a>
 
           </ul>
@@ -96,8 +96,8 @@
           Our services include the following:</p>
           <div class="grid">
             <ul class="show-on-scroll bottom">
-              <li>Civil</li>
               <li>Structural</li>
+              <li>Civil</li>
               <li>Water</li>
               <li>Rail</li>
               <li>Roads</li>
@@ -138,11 +138,11 @@
           <ul class="show-on-scroll middle">
 
             <a href="tel:01753-530-836">
-              <li>01753 530836 	&#x260E;</li>
+              <li id="phone">01753 530836 	&#x260E;</li>
             </a>
 
             <a href="mailto:admin@rwalpole.globalnet.co.uk">
-              <li style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
+              <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
 
           </ul>
 
@@ -155,7 +155,7 @@
             SL1 4LH<br>
           </address>
 
-          <button class="show-on-scroll bottom" onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
+          <button id="openmap"class="show-on-scroll bottom" onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
 
           <div class="popup">
             <div class="mapcontainer">
@@ -189,7 +189,7 @@
           <ul class="show-on-scroll bottom">
 
               <a href="#nothing">
-                <li>Find Out More &#x2794;</li>
+                <li id="findoutmore">Find Out More &#x2794;</li>
               </a>
 
           </ul>
@@ -206,13 +206,13 @@
           <ul class="show-on-scroll bottom">
 
               <a href="#nothing">
-                <li>Company Policies &#x2794;</li>
+                <li id="companypolicies">Company Policies &#x2794;</li>
               </a>
               <a href="#nothing">
-                <li>Partners &#x2794;</li>
+                <li id="partners">Partners &#x2794;</li>
               </a>
               <a href="#nothing">
-                <li>Case Studies &#x2794;</li>
+                <li id="casestudies">Case Studies &#x2794;</li>
               </a>
           </ul>
 
