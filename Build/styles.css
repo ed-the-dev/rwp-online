@@ -528,7 +528,9 @@ iframe{
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-
+  .careersMenu{
+    margin: 0 40px 0 0;
+  }
 
 
 }
@@ -543,8 +545,33 @@ iframe{
     margin: 0 40px 0 0;
   }
 
+
+
   #logodarkfull{
     margin: 0 0 0 5px;
   }
 
+}
+
+/* C A R E E R S   P A G E */
+
+.careers{
+  top: 59px;
+  height:calc(100% - 59px);
+  overflow-y: auto;
+}
+
+.careersMenu a{
+  color: #dadada;
+}
+
+.careersMenu{
+  /* flex: 2; */
+  flex-direction: row;
+  padding: 0 0 0 10px;
+}
+
+.inactiveLink{
+  pointer-events: none;
+  cursor: default;
 }
