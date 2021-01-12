@@ -225,6 +225,27 @@ function indexOfMax(arr) {
   return maxIndex;
 }
 
+function slowMove(){
+  document.getElementById('welcome').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
+
+
+//   // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//   //     anchor.addEventListener('click', function (e) {
+//   //         e.preventDefault();
+//
+//           console.log("this function called")
+//
+//           document.querySelector(this.getAttribute('href')).scrollIntoView({
+//               behavior: 'smooth'
+//           });
+//       });
+//   });
+//
+// }
+
 function showMap() {
   console.log("Button Clicked");
   document.getElementById("withmap").classList.add("show")

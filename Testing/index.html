@@ -1,374 +1,294 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <!--
-    Modified from the Debian original for Ubuntu
-    Last updated: 2014-03-19
-    See: https://launchpad.net/bugs/1288690
-  -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Apache2 Ubuntu Default Page: It works</title>
-    <style type="text/css" media="screen">
-  * {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-  }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>RWP - Home</title>
+    <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
-  body, html {
-    padding: 3px 3px 3px 3px;
-
-    background-color: #D8DBE2;
-
-    font-family: Verdana, sans-serif;
-    font-size: 11pt;
-    text-align: center;
-  }
-
-  div.main_page {
-    position: relative;
-    display: table;
-
-    width: 800px;
-
-    margin-bottom: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px 0px 0px 0px;
-
-    border-width: 2px;
-    border-color: #212738;
-    border-style: solid;
-
-    background-color: #FFFFFF;
-
-    text-align: center;
-  }
-
-  div.page_header {
-    height: 99px;
-    width: 100%;
-
-    background-color: #F5F6F7;
-  }
-
-  div.page_header span {
-    margin: 15px 0px 0px 50px;
-
-    font-size: 180%;
-    font-weight: bold;
-  }
-
-  div.page_header img {
-    margin: 3px 0px 0px 40px;
-
-    border: 0px 0px 0px;
-  }
-
-  div.table_of_contents {
-    clear: left;
-
-    min-width: 200px;
-
-    margin: 3px 3px 3px 3px;
-
-    background-color: #FFFFFF;
-
-    text-align: left;
-  }
-
-  div.table_of_contents_item {
-    clear: left;
-
-    width: 100%;
-
-    margin: 4px 0px 0px 0px;
-
-    background-color: #FFFFFF;
-
-    color: #000000;
-    text-align: left;
-  }
-
-  div.table_of_contents_item a {
-    margin: 6px 0px 0px 6px;
-  }
-
-  div.content_section {
-    margin: 3px 3px 3px 3px;
-
-    background-color: #FFFFFF;
-
-    text-align: left;
-  }
-
-  div.content_section_text {
-    padding: 4px 8px 4px 8px;
-
-    color: #000000;
-    font-size: 100%;
-  }
-
-  div.content_section_text pre {
-    margin: 8px 0px 8px 0px;
-    padding: 8px 8px 8px 8px;
-
-    border-width: 1px;
-    border-style: dotted;
-    border-color: #000000;
-
-    background-color: #F5F6F7;
-
-    font-style: italic;
-  }
-
-  div.content_section_text p {
-    margin-bottom: 6px;
-  }
-
-  div.content_section_text ul, div.content_section_text li {
-    padding: 4px 8px 4px 16px;
-  }
-
-  div.section_header {
-    padding: 3px 6px 3px 6px;
-
-    background-color: #8E9CB2;
-
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 112%;
-    text-align: center;
-  }
-
-  div.section_header_red {
-    background-color: #CD214F;
-  }
-
-  div.section_header_grey {
-    background-color: #9F9386;
-  }
-
-  .floating_element {
-    position: relative;
-    float: left;
-  }
-
-  div.table_of_contents_item a,
-  div.content_section_text a {
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  div.table_of_contents_item a:link,
-  div.table_of_contents_item a:visited,
-  div.table_of_contents_item a:active {
-    color: #000000;
-  }
-
-  div.table_of_contents_item a:hover {
-    background-color: #000000;
-
-    color: #FFFFFF;
-  }
-
-  div.content_section_text a:link,
-  div.content_section_text a:visited,
-   div.content_section_text a:active {
-    background-color: #DCDFE6;
-
-    color: #000000;
-  }
-
-  div.content_section_text a:hover {
-    background-color: #000000;
-
-    color: #DCDFE6;
-  }
-
-  div.validator {
-  }
-    </style>
   </head>
-  <body>
-    <div class="main_page">
-      <div class="page_header floating_element">
-        <img src="/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element"/>
-        <span class="floating_element">
-          Apache2 Ubuntu Default Page
-        </span>
+
+  <body class="change">
+
+    <header>
+      <div class="header-container">
+        <img src="images/burger-lines.svg" alt="Menu Button" class = "menu-button" onclick="openNav()">
+
+        <div id="mySidenav" class="sidenav" id="sidenav">
+          <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
+
+          <div class="navoption">
+            <a onclick="closeNav(); doScrolling('welcome')" id="snwelcome" class="current" >Welcome</a>
+          </div>
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('services')" id="snservices">Services</a>
+          </div>
+
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('about-rwp')" id="snabout-rwp">About&nbsp;RWP</a>
+          </div>
+
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('contact')" id="sncontact">Contact</a>
+          </div>
+
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('careers')" id="sncareers">Careers</a>
+          </div>
+
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('company')" id="sncompany">Company</a>
+          </div>
+
+        </div>
+
+        <img src="images/dark.svg" alt="logo" id ="logotopright">
+        <img src="images/dark-full.svg" alt="logo-full" id="logodarkfull">
       </div>
-<!--      <div class="table_of_contents floating_element">
-        <div class="section_header section_header_grey">
-          TABLE OF CONTENTS
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#about">About</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#changes">Changes</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#scope">Scope</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#files">Config files</a>
-        </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
       </div>
--->
-      <div class="content_section floating_element">
+
+    </header>
+
+    <section class = "blue-background" id = "welcome">
+      <div class="content">
+        <h1 data-aos="fade-down"
+        >Welcome</h1>
+
+        <p data-aos="fade-up">
+          Robert Walpole &&nbsp;Partners is
+          engaged in a wide range of civil and structural engineering works
+          carrying out design, supervision and project management.</p>
+
+        <ul data-aos="fade-up">
+
+            <a onclick="doScrolling('services')">
+              <li id="services-button">Services&#x2794;</li>
+            </a>
+
+        </ul>
 
 
-        <div class="section_header section_header_red">
-          <div id="about"></div>
-          It works!
-        </div>
-        <div class="content_section_text">
-          <p>
-                This is the default welcome page used to test the correct
-                operation of the Apache2 server after installation on Ubuntu systems.
-                It is based on the equivalent page on Debian, from which the Ubuntu Apache
-                packaging is derived.
-                If you can read this page, it means that the Apache HTTP server installed at
-                this site is working properly. You should <b>replace this file</b> (located at
-                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
-          </p>
+      </div>
 
 
-          <p>
-                If you are a normal user of this web site and don't know what this page is
-                about, this probably means that the site is currently unavailable due to
-                maintenance.
-                If the problem persists, please contact the site's administrator.
-          </p>
+    </section>
 
-        </div>
-        <div class="section_header">
-          <div id="changes"></div>
-                Configuration Overview
-        </div>
-        <div class="content_section_text">
-          <p>
-                Ubuntu's Apache2 default configuration is different from the
-                upstream default configuration, and split into several files optimized for
-                interaction with Ubuntu tools. The configuration system is
-                <b>fully documented in
-                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
-                documentation. Documentation for the web server itself can be
-                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>
-                package was installed on this server.
+    <section id="services">
+      <div class="spacer">
 
-          </p>
-          <p>
-                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:
-          </p>
-          <pre>
-/etc/apache2/
-|-- apache2.conf
-|       `--  ports.conf
-|-- mods-enabled
-|       |-- *.load
-|       `-- *.conf
-|-- conf-enabled
-|       `-- *.conf
-|-- sites-enabled
-|       `-- *.conf
-          </pre>
-          <ul>
-                        <li>
-                           <tt>apache2.conf</tt> is the main configuration
-                           file. It puts the pieces together by including all remaining configuration
-                           files when starting up the web server.
-                        </li>
+      </div>
+      <div class="content">
+        <h1 data-aos="fade-down"
+            data-aos-anchor="#services"
+            data-aos-anchor-placement="top-center">
+        Engineering Services</h1>
 
-                        <li>
-                           <tt>ports.conf</tt> is always included from the
-                           main configuration file. It is used to determine the listening ports for
-                           incoming connections, and this file can be customized anytime.
-                        </li>
+        <p data-aos="fade-up"
+          data-aos-anchor="#services"
+          data-aos-anchor-placement="top-center">
+        Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
+        service for many types of project.</p>
 
-                        <li>
-                           Configuration files in the <tt>mods-enabled/</tt>,
-                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
-                           particular configuration snippets which manage modules, global configuration
-                           fragments, or virtual host configurations, respectively.
-                        </li>
-
-                        <li>
-                           They are activated by symlinking available
-                           configuration files from their respective
-                           *-available/ counterparts. These should be managed
-                           by using our helpers
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod">a2enmod</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod">a2dismod</a>,
-                           </tt>
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite">a2ensite</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite">a2dissite</a>,
-                            </tt>
-                                and
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf">a2enconf</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf">a2disconf</a>
-                           </tt>. See their respective man pages for detailed information.
-                        </li>
-
-                        <li>
-                           The binary is called apache2. Due to the use of
-                           environment variables, in the default configuration, apache2 needs to be
-                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.
-                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
-                           default configuration.
-                        </li>
+        <p data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
+        Our services include the following:</p>
+        <div class="grid">
+          <ul data-aos="fade-up"
+          data-aos-anchor="#services"
+          data-aos-anchor-placement="top-center">
+            <li>Structural</li>
+            <li>Civil</li>
+            <li>Water</li>
+            <li>Rail</li>
+            <li>Roads</li>
+            <li>Drainage</li>
           </ul>
         </div>
 
-        <div class="section_header">
-            <div id="docroot"></div>
-                Document Roots
-        </div>
+        <p data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
+        Download and view our Capability Statement:</p>
 
-        <div class="content_section_text">
-            <p>
-                By default, Ubuntu does not allow access through the web browser to
-                <em>any</em> file apart of those located in <tt>/var/www</tt>,
-                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html">public_html</a>
-                directories (when enabled) and <tt>/usr/share</tt> (for web
-                applications). If your site is using a web document root
-                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
-                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
-            </p>
-            <p>
-                The default Ubuntu document root is <tt>/var/www/html</tt>. You
-                can make your own virtual hosts under /var/www. This is different
-                to previous releases which provides better security out of the box.
-            </p>
-        </div>
+        <ul data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
 
-        <div class="section_header">
-          <div id="bugs"></div>
-                Reporting Problems
-        </div>
-        <div class="content_section_text">
-          <p>
-                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the
-                Apache2 package with Ubuntu. However, check <a
-                href="https://bugs.launchpad.net/ubuntu/+source/apache2">existing
-                bug reports</a> before reporting a new bug.
-          </p>
-          <p>
-                Please report bugs specific to modules (such as PHP and others)
-                to respective packages, not to the web server itself.
-          </p>
-        </div>
+            <a href="files/RWP-Capability-Statement.pdf" target="_blank">
+              <li id="services-button">Capability Statement PDF &#x2193;</li>
+            </a>
+
+        </ul>
 
 
 
 
       </div>
-    </div>
-    <div class="validator">
-    </div>
+    </section>
+
+    <section class="blue-background" id = "about-rwp">
+
+      <div class="content">
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        About RWP</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        We work with geotechnical, mechanical and electrical
+        engineering practices to provide a complete technical service.</p>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
+        Affinity&nbsp;Water.</p>
+
+      </div>
+
+    </section>
+
+    <section id="contact">
+      <div class="content" id="withmap">
+
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+        >Contact</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+        > Get in touch:</p>
+        <ul data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+
+          <a href="tel:01753-530-836">
+            <li id="phone">01753 530836 	&#x260E;</li>
+          </a>
+
+          <a href="mailto:admin@rwalpole.globalnet.co.uk">
+            <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
+
+        </ul>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+        Location:</p>
+
+        <address data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+          10 Banbury Avenue<br>
+          Slough, Berkshire<br>
+          SL1 4LH<br>
+        </address>
+
+        <button data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+          id="openmap"class=" " onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
+
+        <div class="popup">
+          <div class="mapcontainer">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
+              frameborder="0" style="border:0;"
+              allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            </div>
+
+            <button onclick="hideMap()" type="button" name="closemapbutton" class="dark">Close Map &#x2691;</button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="blue-background" id="careers">
+      <div class="content">
+
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
+        Careers</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
+        We are looking for graduate and experienced engineers.
+        RWP have an ICE training scheme. We also offer industrial placement years
+        and summer placements.</p>
+
+
+        <ul data-aos="fade-up"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
+
+            <a href="careers.html">
+              <li id="findoutmore">Find Out More &#x2794;</li>
+            </a>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="company">
+      <div class="content">
+
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#company"
+          data-aos-anchor-placement="top-center">
+        Company</h1>
+
+        <ul data-aos="fade-up"
+          data-aos-anchor="#company"
+          data-aos-anchor-placement="top-center">
+
+            <a href="company-policies.html">
+              <li id="companypolicies">Company Policies &#x2794;</li>
+            </a>
+            <a href="partners.html">
+              <li id="partners">Partners &#x2794;</li>
+            </a>
+              <!-- <a href="#nothing">
+                <li id="casestudies">Case Studies &#x2794;</li>
+              </a> -->
+        </ul>
+
+
+
+
+
+      </div>
+
+    </section>
+
+
+
+  <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+        // {duration: 1000}
+      )
+    </script>
+
   </body>
 </html>
