@@ -1,7 +1,20 @@
 // var sections = document.getElementsByClassName("content");
 var displayHeight = document.documentElement.clientHeight;
 var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-let currentSec = 'welcome';
+// let currentSec = 'welcome';
+
+// Checking current section for correct theme on reload.
+
+_sections = ['welcome','services','about-rwp','contact','careers','company'];
+var _bbs = [];
+var _areas = [];
+for (var i = 0; i <_sections.length; i++){
+  _bbs[i] = document.getElementById(_sections[i]).getBoundingClientRect();
+  _areas[i] = (_bbs[i].top < 64) ? _bbs[i].bottom - 64 : displayHeight - _bbs[i].top - 64;
+}
+
+let currentSec = _sections[indexOfMax(_areas)];
+
 
 window.onscroll = function(){scrolling()};
 
@@ -33,7 +46,7 @@ function scrolling() {
       case 'welcome': // welcome
         document.getElementById("snwelcome").classList.add('current');
         document.getElementById("snservices").classList.remove('current');
-        document.body.classList.add('change');  
+        document.body.classList.add('change');
 
         break;
 
@@ -165,9 +178,7 @@ function doScrolling(element) {
   // duration = Math.abs(diff);
   duration =  Math.abs(diff) < 1000 ? 500 : 1000
 
-
   // Easing function: easeInOutCubic
-  // From: https://gist.github.com/gre/1650294
   var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
   var start
 
