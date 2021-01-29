@@ -1,0 +1,660 @@
+@font-face {
+  font-family: 'AcuminPro';
+  src: url('fonts/Acumin-RPro.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'AcuminProBold';
+  src: url('fonts/Acumin-BdPro.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  /* Maybe because both classes have the overscroll setting it is fucking it */
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  /* scroll-behavior: smooth; */
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+  transition: 0.3s all;
+  z-index: 0;
+}
+
+
+.change{
+  background-color: #1c2e37;
+  transition: 0.3s all;
+}
+
+
+/* article{
+  position: fixed;
+  top: 64px;
+  -webkit-overflow-scrolling: touch;
+  height:calc(100% - 64px);
+  height:-moz-calc(100% - 64px);
+  height:-webkit-calc(100% - 64px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 100vw;
+  overscroll-behavior: none;
+} */
+
+section{
+  min-height: 100%;
+  max-height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* SCROLL PROGRESS */
+
+header {
+  overscroll-behavior: auto;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #1c2e37;
+}
+
+a{
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
+	letter-spacing: 2.5px;
+}
+
+h1{
+  color: #1c2e37;
+  font-family: 'AcuminProBold';
+  padding: 20px 0;
+  font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	letter-spacing: 3.5px;
+	text-align: left;
+	text-indent: 0vh;
+	text-transform: uppercase;
+	word-spacing: 0px;
+
+  transition-timing-function: ease-out;
+}
+
+
+p{
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  padding: 20px 0;
+  font-size: 18px;
+	letter-spacing: 2.5px;
+	line-height: 30px;
+	text-align: left;
+}
+
+address{
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  font-size: 18px;
+	letter-spacing: 2.5px;
+	line-height: 30px;
+	text-align: left;
+}
+
+li{
+  list-style-type: none;
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  font-size: 20px;
+	letter-spacing: 2.5px;
+	line-height: 30px;
+	text-align: left;
+
+  padding: 5px 2px 2px 5px;
+  border-radius: 5px 10px 5px;
+  border: 3px solid #f7c86f;
+  margin: 20px 0;
+}
+
+.grid li{
+  border: 0;
+}
+
+.blue-background li{
+  border: 3px solid #dadada;
+  color: #dadada;
+}
+
+.change .blue-background li{
+  border: 3px solid #f7c86f;
+  color: #dadada;
+}
+
+.change li{
+  border: 3px solid #1c2e37;
+}
+
+#services-button, #findoutmore, #companypolicies, #partners, #casestudies{
+  width: fit-content;
+  padding: 5px 20px 2px 20px;
+}
+
+#phone, #email, #openmap{
+  width: fit-content;
+  padding: 5px 10px 2px 10px;
+}
+
+.grid > ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 16px;
+}
+
+.grid > ul > li{
+  margin: 0;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.spacer{
+  /* height: 20vh; */
+  width: 100%;
+}
+
+button{
+  list-style-type: none;
+  color: #1c2e37;
+  font-family: 'AcuminPro';
+  font-size: 20px;
+	letter-spacing: 2.5px;
+	line-height: 30px;
+	text-align: left;
+  padding: 5px 2px 2px 5px;
+  border-radius: 5px 10px 5px;
+  border: 3px solid #f7c86f;
+  background-color: inherit;
+  margin: 20px 0;
+}
+
+.blue-background button{
+  border: 3px solid #dadada;
+  color: #dadada;
+}
+
+.change .blue-background button{
+  border: 3px solid #f7c86f;
+  color: #dadada;
+}
+
+.change button{
+  border: 3px solid #1c2e37;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #dadada;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 4px;
+  background: #f7c86f;
+  width: 0%;
+}
+
+/* Side Navigation */
+
+.sidenav {
+ height: 100%; /* 100% Full-height */
+ width: 250px;
+ position: fixed;
+ z-index: 2;
+ top: 0;
+ left: 0;
+ background-color: #dadada;
+ overflow-x: hidden;
+ padding-top: 0px; /* Place content 0px from the top -- needed to make the animation work */
+ transition: 0.5s;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sidenav.show{
+  transition: 0.25s;
+  transition-timing-function: ease-out;
+  transform: translate(0);
+  will-change: transform;
+}
+
+.sidenav{
+  transform: translate(-100%);
+  transition-timing-function: ease-in;
+  transition: 0.25s;
+  will-change: transform;
+}
+
+/* The navigation menu links */
+.sidenav .navoption {
+ padding: 8px 8px 8px 32px;
+ text-decoration: none;
+ font-size: 25px;
+ color: #1c2e37;
+ display: block;
+ transition: 0.3s;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+ position: absolute;
+ top: 0;
+ right: 25px;
+ font-size: 36px;
+ margin-left: 50px;
+}
+
+.navoption a{
+  position: relative;
+  /* The position of the underline is based on this */
+}
+
+.sidenav a:before, .sidenav a:after {
+  z-index: 5;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 0px;
+  height: 5px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.3s;
+  opacity: 1;
+  background-color: #1c2e37;
+}
+
+.sidenav a:before{
+  left: 50%;
+}
+
+.sidenav a:after{
+  right: 50%;
+}
+
+.sidenav a:hover{
+  /* color: #f7c86f; */
+}
+
+.navoption:hover a:before,
+.navoption:hover a:after{
+  width: 50%
+}
+
+.navoption a.current:before,
+.navoption a.current:after{
+  width: 50%;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+ .sidenav {padding-top: 15px;}
+ .sidenav a {font-size: 18px;}
+}
+
+/* My Stuff */
+
+.menu-button{
+  height: 35px;
+  position: relative;
+  margin: 10px;
+}
+
+.x-button{
+  height: 30px;
+  position: relative;
+  top: 0px;
+  left: calc(180px);
+  margin: 15px;
+}
+
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logotopright{
+  height: 60px;
+  margin-left: auto;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  opacity: 1.0;
+  padding: 5px;
+}
+
+#logodarkfull{
+  display: none;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 2000px;
+  max-height: inherit;
+  width: calc(100% - 64px);
+  max-width: 380px;
+  margin-top: 0vh; /* this property will have to change within the media rules
+                        scaling on other devices */
+}
+
+
+.blue-background{
+  /* background-color: #1c2e37; */
+}
+
+.blue-background h1{
+  color: #dadada;
+}
+
+.blue-background p{
+  color: #dadada;
+}
+
+.popup{
+  height:calc(100% - 64px);
+  width: 100%;
+  top: 64px;
+  left:0;
+  position: fixed;
+}
+
+.content.show .popup{
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+  transform: translate(0);
+  opacity: 1;
+  : 1;
+  will-change: transform;
+}
+
+.popup{
+  transform: translate(-100%);
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+  z-index: 1;
+  opacity: 1;
+  will-change: transform;
+  padding: 20px;
+}
+
+.mapcontainer{
+  background-color: #1c2e37;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-height: max-content;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.map{
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  height:calc(100%);
+}
+
+
+iframe{
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+}
+
+.dark{
+  border-color: #f7c86f;
+  color: #dadada;
+  background-color: inherit;
+  width: fit-content;
+  padding: 5px 20px 2px 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.mapDesktop{
+  display: none;
+}
+
+/* C A R E E R S   P A G E */
+
+.careers{
+  top: 59px;
+  height:calc(100% - 59px);
+  overflow-y: auto;
+}
+
+.careersMenu a{
+  color: #dadada;
+}
+
+.careersMenu{
+  /* flex: 2; */
+  flex-direction: row;
+  padding: 0 0 0 10px;
+}
+
+.inactiveLink{
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Media Rules */
+
+@media screen and (min-width: 680px) {
+
+  .careers{
+    top: 85px;
+    height:calc(100% - 85px);
+  }
+
+
+
+  p{
+    font-size: 25px;
+    letter-spacing: 3px;
+  	line-height: 35px;
+  }
+
+  button{
+    font-size: 25px;
+    letter-spacing: 3px;
+  	line-height: 35px;
+  }
+
+  li{
+    font-size: 25px;
+    letter-spacing: 3px;
+  	line-height: 35px;
+  }
+
+  address{
+    font-size: 25px;
+    letter-spacing: 3px;
+  	line-height: 35px;
+  }
+
+
+  .content{
+    width: calc(100% - 200px);
+    max-width: 635px;
+  }
+
+  #openmap{
+    display: none;
+  }
+
+  .mapDesktop{
+    display: block;
+    margin: 15px 0px 30px 0;
+    height: 400px;
+  }
+
+  .popup{
+    display: none;
+  }
+
+  .menu-button{
+    display: none;
+    }
+
+  .x-button{
+    display: none;
+  }
+
+  .sidenav {
+    transform: translate(0);
+    height: 85px;
+    padding: 5px;
+    width: max-content;
+    position: relative;
+    z-index: 1;
+    background-color: #1c2e37;
+    overflow-x: visible;
+    box-shadow: 0 0 0 0;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+
+   /* Blue Color: #1c2e37; */
+   /* Yellow Color: #f7c86f; */
+  }
+
+  .navoption{
+    align-self: center;
+    justify-self: center;
+  }
+
+  .navoption > a{
+    color: #dadada;
+  }
+
+  .sidenav .navoption{
+    /* max-width: max-content; */
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+  }
+
+  .sidenav a:before, .sidenav a:after {
+    background-color: #dadada;
+  }
+
+  #logotopright{
+    display: none;
+
+  }
+
+  #logodarkfull{
+    order: 1;
+    display: block;
+    height: 85px;
+    margin-right: auto;
+    opacity: 1.0;
+    padding: 10px;
+    margin: 0 0 0 0;
+  }
+
+  #sidenav{
+    order: 2;
+  }
+
+  h1{
+    font-size: 60px;
+  }
+
+  article{
+    top: 89px;
+    height:calc(100% - 89px);
+    height:-moz-calc(100% - 89px);
+    height:-webkit-calc(100% - 89px);
+    width: 100%;
+  }
+
+  .header-container{
+    flex-direction: row-reverse;
+  }
+
+  .sidenav a:before, .sidenav a:after {
+    height: 4px;
+  }
+
+  .grid > ul{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .careersMenu{
+    margin: 0 40px 0 0;
+  }
+
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  .grid > ul{
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .content{
+    width: calc(100% - 500px);
+    max-width: 760px;
+  }
+
+  .sidenav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+  #logodarkfull{
+    margin: 0 0 0 5px;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+
+  .grid > ul{
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .content{
+    width: calc(100% - 500px);
+    max-width: 950px;
+  }
+
+}

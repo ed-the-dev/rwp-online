@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Partners</title>
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
   </head>
 
-  <body>
+  <body class="change">
 
     <header>
       <div class="header-container">
         <div class="careersMenu">
-          <a href="index.html">&#x2616; Home</a>
+          <a href="index.html#company">&#x2616; Home</a>
         </div>
 
         <img src="images/dark.svg" alt="logo" id ="logotopright">
@@ -22,30 +23,34 @@
 
     </header>
 
-    <article class="careers" onscroll="scrolling(); " id="article">
-
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 class="show-on-scroll top is-visible"
+          <h1 data-aos="fade-down"
           >Partners</h1>
 
-          <p class="show-on-scroll middle is-visible">The partners of the firm
+          <p data-aos="fade-up">The partners of the firm
             are Jonathan Walpole and Mark Simmons who both started in Civil
             Engineering at Imperial College in London.</p>
 
-          <p class="show-on-scroll middle is-visible">M J Walpole BSc(Eng) ACGI CEng MICE M ConsE</p>
+          <p data-aos="fade-up">M J Walpole BSc(Eng) ACGI CEng MICE M ConsE</p>
 
-          <p class="show-on-scroll middle is-visible">M W Simmons BSc(Eng) ACGI CEng MICE MCIWEM</p>
+          <p data-aos="fade-up">M W Simmons BSc(Eng) ACGI CEng MICE MCIWEM</p>
 
 
         </div>
       </section>
 
 
-    </article>
-
-
   <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+      )
+    </script>
 
   </body>
 </html>

@@ -15,6 +15,40 @@ for (var i = 0; i <_sections.length; i++){
 
 let currentSec = _sections[indexOfMax(_areas)];
 
+console.log("Starting Section = " + currentSec)
+
+switch (currentSec) {
+  case 'welcome': // welcome
+    document.getElementById("snwelcome").classList.add('current');
+    document.body.classList.add('change');
+    break;
+
+  case 'services': // services
+    document.getElementById("snservices").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+
+  case 'about-rwp': // aboutRwp
+    document.getElementById("snabout-rwp").classList.add('current');
+    document.body.classList.add('change');
+    break;
+
+  case 'contact': // contact
+    document.getElementById("sncontact").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+
+  case 'careers': // careers
+    document.getElementById("sncareers").classList.add('current');
+    document.body.classList.add('change');
+    break;
+
+  case 'company': // company
+    document.getElementById("sncompany").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+}
+
 
 window.onscroll = function(){scrolling()};
 

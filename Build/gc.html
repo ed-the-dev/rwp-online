@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Graduate Careers</title>
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
   </head>
 
-  <body>
+  <body class="change">
 
     <header>
       <div class="header-container">
         <div class="careersMenu">
-          <a href="index.html">&#x2616; Home</a>
+          <a href="index.html#careers">&#x2616; Home</a>
           <a class="inactiveLink">&#x2f;</a>
           <a href="careers.html">Careers</a>
         </div>
@@ -24,33 +25,32 @@
 
     </header>
 
-    <article class="careers" onscroll="scrolling(); " id="article">
 
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 class="show-on-scroll top is-visible"
+          <h1 data-aos="fade-down"
           >Graduate Careers</h1>
 
-          <p class="show-on-scroll middle is-visible">
+          <p data-aos="fade-up">
             RWP currently has vacancies for graduate engineers to join our team in Slough.
              We accept graduates with at least a 2:1 MEng in Civil Engineering.</p>
 
-          <p class="show-on-scroll middle is-visible">
+          <p data-aos="fade-up">
             Upon beginning your career, you will be involved in one of many varied projects.
             We offer a wide variety of design, site based and management experience,
             allowing graduates to develop their engineering and leadership skills,
             ready to become Chartered Engineers.</p>
 
-          <p class="show-on-scroll middle is-visible">
+          <p data-aos="fade-up">
             Our Graduate Training Scheme is fully accredited by the Institute of Civil
             Engineers (ICE) and you will be encouraged and supported towards achieving
             Professional Chartered Engineer status.</p>
 
-          <p class="show-on-scroll middle is-visible">
+          <p data-aos="fade-up">
             Please email us your CV with ‘Graduate Careers at Robert Walpole’
              in the subject line for further information.</p>
 
-          <ul class="show-on-scroll bottom is-visible">
+          <ul data-aos="fade-up">
 
             <a href="mailto:admin@rwalpole.globalnet.co.uk">
               <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
@@ -58,10 +58,18 @@
 
         </div>
       </section>
-    </article>
 
 
   <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+      )
+    </script>
 
   </body>
 </html>

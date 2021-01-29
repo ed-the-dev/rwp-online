@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Home</title>
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
   </head>
 
+  <body class="change">
+    <img class="drawingone" id="drawingone"src="images/drawing1.svg">
+    <img class="drawingtwo" id="drawingtwo"src="images/drawing2.svg">
+    <img class="drawingthree" id="drawingthree"src="images/drawing3.svg">
+    <img class="drawingfour" id="drawingfour"src="images/drawing4.svg">
+    <img class="drawingfive" id="drawingfive"src="images/drawing5.svg">
+    <img class="drawingsix" id="drawingsix"src="images/drawing6.svg">
 
-
-
-
-  <body>
 
     <header>
       <div class="header-container">
@@ -22,27 +27,26 @@
           <img href="javascript:void(0)" src="images/x_button.svg" alt="x Button" class = "x-button" onclick="closeNav()">
 
           <div class="navoption">
-            <a onclick="closeNav();slowMove();" id="snwelcome" class="current" >Welcome</a>
+            <a onclick="closeNav(); doScrolling('welcome')" id="snwelcome" >Welcome</a>
+          </div>
+          <div class="navoption">
+              <a onclick="closeNav(); doScrolling('services')" id="snservices">Services</a>
           </div>
 
           <div class="navoption">
-              <a href="#services" onclick="closeNav()" id="snservices">Services</a>
+              <a onclick="closeNav(); doScrolling('about-rwp')" id="snabout-rwp">About&nbsp;RWP</a>
           </div>
 
           <div class="navoption">
-              <a href="#about-rwp" onclick="closeNav()" id="snabout-rwp">About&nbsp;RWP</a>
+              <a onclick="closeNav(); doScrolling('contact')" id="sncontact">Contact</a>
           </div>
 
           <div class="navoption">
-              <a href="#contact" onclick="closeNav()" id="sncontact">Contact</a>
+              <a onclick="closeNav(); doScrolling('careers')" id="sncareers">Careers</a>
           </div>
 
           <div class="navoption">
-              <a href="#careers" onclick="closeNav()" id="sncareers">Careers</a>
-          </div>
-
-          <div class="navoption">
-              <a href="#company" onclick="closeNav()" id="sncompany">Company</a>
+              <a onclick="closeNav(); doScrolling('company')" id="sncompany">Company</a>
           </div>
 
         </div>
@@ -57,194 +61,248 @@
 
     </header>
 
-    <article onscroll="scrolling(); " id="article">
+    <section class = "blue-background" id = "welcome">
 
-      <section class = "blue-background" id = "welcome">
-        <div class="content">
-          <h1 class="show-on-scroll top is-visible"
-          >Welcome</h1>
+      <div class="content">
+        <h1 data-aos="fade-down"
+        >Welcome</h1>
 
-          <p class="show-on-scroll middle is-visible">
-            Robert Walpole &&nbsp;Partners is
-            engaged in a wide range of civil and structural engineering works
-            carrying out design, supervision and project management.</p>
+        <p data-aos="fade-up">
+          Robert Walpole &&nbsp;Partners is
+          engaged in a wide range of civil and structural engineering works
+          carrying out design, supervision and project management.</p>
 
-          <ul class="show-on-scroll bottom is-visible">
+        <ul data-aos="fade-up">
 
-              <a href="#services">
-                <li id="services-button">Services&#x2794;</li>
-              </a>
-
-          </ul>
-
-
-        </div>
-
-
-      </section>
-
-      <section id="services">
-        <div class="content">
-          <h1 class="show-on-scroll top">
-          Engineering Services</h1>
-
-          <p class="show-on-scroll middle">
-          Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
-          service for many types of project.</p>
-
-          <p class="show-on-scroll middle">
-          Our services include the following:</p>
-          <div class="grid">
-            <ul class="show-on-scroll middle">
-              <li>Structural</li>
-              <li>Civil</li>
-              <li>Water</li>
-              <li>Rail</li>
-              <li>Roads</li>
-              <li>Drainage</li>
-            </ul>
-          </div>
-
-          <p class="show-on-scroll middle">
-          Download and view our Capability Statement:</p>
-
-          <ul class="show-on-scroll bottom">
-
-              <a href="files/RWP-Capability-Statement.pdf" target="_blank">
-                <li id="services-button">Capability Statement PDF &#x2193;</li>
-              </a>
-
-          </ul>
-
-
-
-
-        </div>
-      </section>
-
-      <section class="blue-background" id = "about-rwp">
-
-        <div class="content">
-          <h1 class="show-on-scroll top">
-          About RWP</h1>
-
-          <p class="show-on-scroll middle">
-          We work with geotechnical, mechanical and electrical
-          engineering practices to provide a complete technical service.</p>
-
-          <p class="show-on-scroll bottom">
-          Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
-          Affinity&nbsp;Water.</p>
-
-        </div>
-
-      </section>
-
-      <section id="contact">
-        <div class="content" id="withmap">
-
-          <h1 class="show-on-scroll top"
-          >Contact</h1>
-
-          <p class="show-on-scroll middle"
-          > Get in touch:</p>
-          <ul class="show-on-scroll middle">
-
-            <a href="tel:01753-530-836">
-              <li id="phone">01753 530836 	&#x260E;</li>
+            <a onclick="doScrolling('services')">
+              <li id="services-button">Services&#x2794;</li>
             </a>
 
-            <a href="mailto:admin@rwalpole.globalnet.co.uk">
-              <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
+        </ul>
 
+
+      </div>
+
+
+    </section>
+
+    <section id="services">
+      <!-- <div class="spacer">
+
+      </div> -->
+      <div class="content">
+        <h1 data-aos="fade-down"
+            data-aos-anchor="#services"
+            data-aos-anchor-placement="top-center">
+        Engineering Services</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#services"
+          data-aos-anchor-placement="top-center">
+        Robert&nbsp;Walpole &&nbsp;Partners provides a complete technical
+        service for many types of project.</p>
+
+        <p data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
+        Our services include the following:</p>
+        <div class="grid">
+          <ul data-aos="fade-up"
+          data-aos-anchor="#services"
+          data-aos-anchor-placement="top-center">
+            <li>&#x27A4; Civil</li>
+            <li>&#x27A4;&nbsp;Structural</li>
+            <li>&#x27A4; Water</li>
+            <li>&#x27A4; Rail</li>
+            <li>&#x27A4; Roads</li>
+            <li>&#x27A4;&nbsp;Drainage</li>
           </ul>
+        </div>
 
-          <p class="show-on-scroll middle">
-          Location:</p>
+        <p data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
+        Download and view our Capability Statement:</p>
 
-          <address class="show-on-scroll middle">
-            10 Banbury Avenue<br>
-            Slough, Berkshire<br>
-            SL1 4LH<br>
-          </address>
+        <ul data-aos="fade-up"
+        data-aos-anchor="#services"
+        data-aos-anchor-placement="top-center">
 
-          <button id="openmap"class="show-on-scroll bottom" onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
+            <a href="files/RWP-Capability-Statement.pdf" target="_blank">
+              <li id="services-button">Capability Statement PDF &#x2193;</li>
+            </a>
 
-          <div class="popup">
-            <div class="mapcontainer">
-              <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
-                frameborder="0" style="border:0;"
-                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </ul>
 
-              </div>
 
-              <button onclick="hideMap()" type="button" name="closemapbutton" class="dark">Close Map &#x2691;</button>
+
+
+      </div>
+    </section>
+
+    <section class="blue-background" id = "about-rwp">
+
+      <div class="content">
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        About RWP</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        We work with geotechnical, mechanical and electrical
+        engineering practices to provide a complete technical service.</p>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#about-rwp"
+          data-aos-anchor-placement="top-center">
+        Amongst the firm’s clients are Network&nbsp;Rail, Crossrail and
+        Affinity&nbsp;Water.</p>
+
+      </div>
+
+    </section>
+
+    <section id="contact">
+      <div class="content" id="withmap">
+
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+        >Contact</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+        > Get in touch:</p>
+        <ul data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+
+          <a href="tel:01753-530-836">
+            <li id="phone">01753 530836 	&#x260E;</li>
+          </a>
+
+          <a href="mailto:admin@rwalpole.globalnet.co.uk">
+            <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
+
+        </ul>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+        Location:</p>
+
+        <address data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center">
+          10 Banbury Avenue<br>
+          Slough, Berkshire<br>
+          SL1 4LH<br>
+        </address>
+
+        <button data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center"
+          id="openmap"class=" " onclick="showMap()" type="button" name="mapbutton">Open Map &#x2691;</button>
+
+        <div class="popup">
+          <div class="mapcontainer">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
+              frameborder="0" style="border:0;"
+              allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
             </div>
+
+            <button onclick="hideMap()" type="button" name="closemapbutton" class="dark">Close Map &#x2691;</button>
+
           </div>
-
-          <iframe class="mapDesktop show-on-scroll bottom"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
-          frameborder="0" style="border:0;"
-          allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
         </div>
-      </section>
 
-      <section class="blue-background" id="careers">
-        <div class="content">
+        <iframe data-aos="fade-up"
+          data-aos-anchor="#contact"
+          data-aos-anchor-placement="top-center" class="mapDesktop show-on-scroll bottom"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.321984214293!2d-0.6353580840276868!3d51.52565391718908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487664c6446e0f77%3A0x6a23a23e6da38208!2sRobert%20Walpole%20and%20Partners!5e0!3m2!1sen!2suk!4v1598233313060!5m2!1sen!2suk"
+        frameborder="0" style="border:0;"
+        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-          <h1 class="show-on-scroll top">
-          Careers</h1>
+      </div>
+    </section>
 
-          <p class="show-on-scroll middle">
-          We are looking for graduate and experienced engineers.
-          RWP have an ICE training scheme. We also offer industrial placement years
-          and summer placements.</p>
+    <section class="blue-background" id="careers">
+      <div class="content">
+
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
+        Careers</h1>
+
+        <p data-aos="fade-up"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
+        We are looking for graduate and experienced engineers.
+        RWP have an ICE training scheme. We also offer industrial placement years
+        and summer placements.</p>
 
 
-          <ul class="show-on-scroll bottom">
+        <ul data-aos="fade-up"
+          data-aos-anchor="#careers"
+          data-aos-anchor-placement="top-center">
 
-              <a href="careers.html">
-                <li id="findoutmore">Find Out More &#x2794;</li>
-              </a>
+            <a href="careers.html">
+              <li id="findoutmore">Find Out More &#x2794;</li>
+            </a>
 
-          </ul>
+        </ul>
 
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="company">
-        <div class="content">
+    <section id="company">
+      <div class="content">
 
-          <h1 class="show-on-scroll top">
-          Company</h1>
+        <h1 data-aos="fade-down"
+          data-aos-anchor="#company"
+          data-aos-anchor-placement="top-center">
+        Company</h1>
 
-          <ul class="show-on-scroll bottom">
+        <ul data-aos="fade-up"
+          data-aos-anchor="#company"
+          data-aos-anchor-placement="top-center">
 
-              <a href="company-policies.html">
-                <li id="companypolicies">Company Policies &#x2794;</li>
-              </a>
-              <a href="partners.html">
-                <li id="partners">Partners &#x2794;</li>
-              </a>
+            <a href="company-policies.html">
+              <li id="companypolicies">Company Policies &#x2794;</li>
+            </a>
+            <a href="partners.html">
+              <li id="partners">Partners &#x2794;</li>
+            </a>
               <!-- <a href="#nothing">
                 <li id="casestudies">Case Studies &#x2794;</li>
               </a> -->
-          </ul>
+        </ul>
 
 
 
 
 
-        </div>
+      </div>
 
-      </section>
+    </section>
 
-    </article>
 
 
   <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+        // {duration: 1000}
+      )
+    </script>
 
   </body>
 </html>

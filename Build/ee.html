@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Experienced Engineers</title>
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
   </head>
 
-  <body>
+  <body class="change">
 
     <header>
       <div class="header-container">
         <div class="careersMenu">
-          <a href="index.html">&#x2616; Home</a>
+          <a href="index.html#careers">&#x2616; Home</a>
           <a class="inactiveLink">&#x2f;</a>
           <a href="careers.html">Careers</a>
         </div>
@@ -24,18 +25,17 @@
 
     </header>
 
-    <article class="careers" onscroll="scrolling(); " id="article">
 
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 class="show-on-scroll top is-visible"
+          <h1 data-aos="fade-down"
           >Experienced Engineers</h1>
 
-          <p class="show-on-scroll middle is-visible">We are looking for design and senior design engineers.
+          <p data-aos="fade-up">We are looking for design and senior design engineers.
             Please email us your CV with ‘Careers at Robert Walpole’
              in the subject line for further information.</p>
 
-             <ul class="show-on-scroll bottom is-visible">
+             <ul data-aos="fade-up">
 
                <a href="mailto:admin@rwalpole.globalnet.co.uk">
                  <li id="email" style="word-wrap: break-word">admin@rwalpole.&#8203;globalnet.co.uk &#x2709;</li></a>
@@ -47,11 +47,16 @@
 
       </section>
 
-
-    </article>
-
-
   <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+      )
+    </script>
 
   </body>
 </html>

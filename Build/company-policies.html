@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RWP - Company Policies</title>
     <link rel='stylesheet' href='styles.css'/>
+    <link rel="stylesheet" href="aos.css"/>
 
   </head>
 
-  <body>
+  <body class="change">
 
     <header>
       <div class="header-container">
         <div class="careersMenu">
-          <a href="index.html">&#x2616; Home</a>
+          <a href="index.html#company">&#x2616; Home</a>
         </div>
 
         <img src="images/dark.svg" alt="logo" id ="logotopright">
@@ -22,17 +23,16 @@
 
     </header>
 
-    <article class="careers" onscroll="scrolling(); " id="article">
 
       <section class = "blue-background" id = "welcome">
         <div class="content">
-          <h1 class="show-on-scroll top is-visible"
+          <h1 data-aos="fade-down"
           >Company Policies</h1>
 
-          <p class="show-on-scroll middle is-visible">
+          <p data-aos="fade-up">
             Download and view the RWP company policies.</p>
 
-          <ul class="show-on-scroll bottom is-visible">
+          <ul data-aos="fade-up">
 
               <a href="files/01.-Quality-Assurance-Policy-Rev.12.pdf" target="_blank">
                 <li id="companypolicies">Quality Assurance Policy &#x2193;</li>
@@ -84,10 +84,18 @@
       </section>
 
 
-    </article>
 
 
   <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="aos.js"></script>
+  <script>
+      AOS.init(
+        {once: false,
+        easing: 'ease-out',
+        duration: 500,
+        delay: 100}
+      )
+    </script>
 
   </body>
 </html>

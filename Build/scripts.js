@@ -1,19 +1,95 @@
+
 // var sections = document.getElementsByClassName("content");
 var displayHeight = document.documentElement.clientHeight;
-var height = document.getElementById("article").scrollHeight - document.getElementById("article").clientHeight;
-let currentSec = 'welcome';
+var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+// console.log('Height = ' + scrolled);
+// let currentSec = 'welcome';
+
+// Checking current section for correct theme on reload.
+
+let currentSec = ''
+
+// if(window.location.hash == '#careers') {
+//   currentSec = 'careers';
+//   history.replaceState(null, null, ' ');
+// } else if (window.location.hash == '#company') {
+//   currentSec = 'company';
+// } else {
+//   _sections = ['welcome','services','about-rwp','contact','careers','company'];
+//   var _bbs = [];
+//   var _areas = [];
+//   for (var i = 0; i <_sections.length; i++){
+//     _bbs[i] = document.getElementById(_sections[i]).getBoundingClientRect();
+//     _areas[i] = (_bbs[i].top < 64) ? _bbs[i].bottom - 64 : displayHeight - _bbs[i].top - 64;
+//   }
+//
+//   currentSec = _sections[indexOfMax(_areas)];
+// }
 
 
-// viewport height a bit funky but will be easily amended when I set the height of the header in pixels
+
+_sections = ['welcome','services','about-rwp','contact','careers','company'];
+var _bbs = [];
+var _areas = [];
+for (var i = 0; i <_sections.length; i++){
+  _bbs[i] = document.getElementById(_sections[i]).getBoundingClientRect();
+  _areas[i] = (_bbs[i].top < 64) ? _bbs[i].bottom - 64 : displayHeight - _bbs[i].top - 64;
+}
+
+currentSec = _sections[indexOfMax(_areas)];
+
+console.log("location of careers = " + document.getElementById('careers').getBoundingClientRect().top);
+
+
+
+
+
+switch (currentSec) {
+  case 'welcome': // welcome
+    document.getElementById("snwelcome").classList.add('current');
+    document.body.classList.add('change');
+    document.getElementById("drawingone").classList.add('showdrawing');
+    break;
+
+  case 'services': // services
+    document.getElementById("snservices").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+
+  case 'about-rwp': // aboutRwp
+    document.getElementById("snabout-rwp").classList.add('current');
+    document.body.classList.add('change');
+    break;
+
+  case 'contact': // contact
+    document.getElementById("sncontact").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+
+  case 'careers': // careers
+    document.getElementById("sncareers").classList.add('current');
+    document.body.classList.add('change');
+    break;
+
+  case 'company': // company
+    document.getElementById("sncompany").classList.add('current');
+    document.body.classList.remove('change');
+    break;
+}
+
+
+
+
+
+window.onscroll = function(){scrolling()};
 
 function scrolling() {
-  var winScroll = document.getElementById("article").scrollTop;
+  var winScroll = document.documentElement.scrollTop;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 
   adjSects = getSections(currentSec);
-
-  // console.log(adjSects);
+  console.log("currentSec in my scrolling function = " + currentSec);
 
   var bbs = [];
   var areas = [];
@@ -36,38 +112,20 @@ function scrolling() {
       case 'welcome': // welcome
         document.getElementById("snwelcome").classList.add('current');
         document.getElementById("snservices").classList.remove('current');
-
-        elements = document.getElementById('welcome').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
-        elements = document.getElementById('services').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
+        document.body.classList.add('change');
+        document.getElementById("drawingone").classList.add('showdrawing');
+        document.getElementById("drawingtwo").classList.remove('showdrawing');
         break;
 
       case 'services': // services
         document.getElementById("snwelcome").classList.remove('current');
         document.getElementById("snservices").classList.add('current');
         document.getElementById("snabout-rwp").classList.remove('current');
+        document.body.classList.remove('change');
+        document.getElementById("drawingone").classList.remove('showdrawing');
+        document.getElementById("drawingtwo").classList.add('showdrawing');
+        document.getElementById("drawingthree").classList.remove('showdrawing');
 
-        elements = document.getElementById('welcome').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
-        elements = document.getElementById('services').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
-        elements = document.getElementById('about-rwp').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
 
         break;
 
@@ -75,126 +133,43 @@ function scrolling() {
         document.getElementById("snservices").classList.remove('current');
         document.getElementById("snabout-rwp").classList.add('current');
         document.getElementById("sncontact").classList.remove('current');
-
-        elements = document.getElementById('services').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
-        elements = document.getElementById('about-rwp').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
-        elements = document.getElementById('contact').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
+        document.body.classList.add('change');
+        document.getElementById("drawingtwo").classList.remove('showdrawing');
+        document.getElementById("drawingthree").classList.add('showdrawing');
+        document.getElementById("drawingfour").classList.remove('showdrawing');
         break;
 
       case 'contact': // contact
         document.getElementById("snabout-rwp").classList.remove('current');
         document.getElementById("sncontact").classList.add('current');
         document.getElementById("sncareers").classList.remove('current');
-
-        elements = document.getElementById('about-rwp').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
-        elements = document.getElementById('contact').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
-        elements = document.getElementById('careers').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
+        document.body.classList.remove('change');
+        document.getElementById("drawingthree").classList.remove('showdrawing');
+        document.getElementById("drawingfour").classList.add('showdrawing');
+        document.getElementById("drawingfive").classList.remove('showdrawing');
         break;
 
       case 'careers': // careers
         document.getElementById("sncontact").classList.remove('current');
         document.getElementById("sncareers").classList.add('current');
         document.getElementById("sncompany").classList.remove('current');
-
-        elements = document.getElementById('contact').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
-        elements = document.getElementById('careers').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
-        elements = document.getElementById('company').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
+        document.body.classList.add('change');
+        document.getElementById("drawingfour").classList.remove('showdrawing');
+        document.getElementById("drawingfive").classList.add('showdrawing');
+        document.getElementById("drawingsix").classList.remove('showdrawing');
         break;
 
       case 'company': // company
         document.getElementById("sncareers").classList.remove('current');
         document.getElementById("sncompany").classList.add('current');
-
-        elements = document.getElementById('careers').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.remove('is-visible');
-        }
-
-        elements = document.getElementById('company').getElementsByClassName("show-on-scroll");
-        for (var j = 0; j < elements.length; j++) {
-          elements.item(j).classList.add('is-visible');
-        }
-
+        document.body.classList.remove('change');
+        document.getElementById("drawingfive").classList.remove('showdrawing');
+        document.getElementById("drawingsix").classList.add('showdrawing');
         break;
 
-      }
+    }
   }
-
 }
-
-
-  // var welcome = document.getElementById('welcome').getBoundingClientRect();
-  // var services = document.getElementById('services').getBoundingClientRect();
-  // var aboutRwp = document.getElementById('about-rwp').getBoundingClientRect();
-  // var contact = document.getElementById('contact').getBoundingClientRect();
-  // var careers = document.getElementById('careers').getBoundingClientRect();
-  // var company = document.getElementById('company').getBoundingClientRect();
-
-  // Ternary Operator
-  // ( condition ) ? run this code : run this code instead
-
-  // let welcomeArea = (welcome.top < 0) ? welcome.bottom : displayHeight - welcome.top;
-  // let servicesArea = (services.top < 0) ? services.bottom : displayHeight - services.top;
-  // let aboutRwpArea = (aboutRwp.top < 0) ? aboutRwp.bottom : displayHeight - aboutRwp.top;
-  // let contactArea = (contact.top < 0) ? contact.bottom : displayHeight - contact.top;
-  // let careersArea = (careers.top < 0) ? careers.bottom : displayHeight - careers.top;
-  // let companyArea = (company.top < 0) ? company.bottom : displayHeight - company.top;
-
-  // let areas = [welcomeArea, servicesArea, aboutRwpArea, contactArea, careersArea, companyArea];
-
-
-  // for (var i = 0; i < areas.length; i++){
-  //   if (i == section){
-  //     elements = sections.item(i).getElementsByClassName("show-on-scroll");
-  //     for (var j = 0; j < elements.length; j++) {
-  //       elements.item(j).classList.add('is-visible');
-  //     }
-  //   } else {
-  //     elements = sections.item(i).getElementsByClassName("show-on-scroll");
-  //     for (var j = 0; j < elements.length; j++) {
-  //       elements.item(j).classList.remove('is-visible');
-  //     }
-  //   }
-  // }
-
-
-
 
 
 function openNav() {
@@ -205,9 +180,7 @@ function openNav() {
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  // document.getElementById("mySidenav").style.width = "0";
   document.getElementById("mySidenav").classList.remove("show")
-
 }
 
 
@@ -224,27 +197,6 @@ function indexOfMax(arr) {
   }
   return maxIndex;
 }
-
-function slowMove(){
-  document.getElementById('welcome').scrollIntoView({
-      behavior: 'smooth'
-  });
-}
-
-
-//   // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//   //     anchor.addEventListener('click', function (e) {
-//   //         e.preventDefault();
-//
-//           console.log("this function called")
-//
-//           document.querySelector(this.getAttribute('href')).scrollIntoView({
-//               behavior: 'smooth'
-//           });
-//       });
-//   });
-//
-// }
 
 function showMap() {
   console.log("Button Clicked");
@@ -279,4 +231,50 @@ function getSections(section){
     case 'company':
       return ['careers', 'company'];
   }
+}
+
+function doScrolling(element) {
+
+  duration = 1000
+	var startingY = window.pageYOffset
+  console.log("Starting Y = " + startingY)
+  var string = element.toString();
+  var elementY = window.pageYOffset + document.getElementById(string).getBoundingClientRect().top;
+
+  // If element is close to page's bottom then window will scroll only to some position above the element.
+  var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY
+  console.log("Document Body Scrollheight = " + document.body.scrollHeight);
+  console.log("Element's Top (elementY)  = " + elementY)
+  console.log("Window Inner Height = " + window.innerHeight);
+  console.log("Target Y = " + targetY);
+	var diff = targetY - startingY;
+  console.log("Difference = " + diff);
+
+  // duration = Math.abs(diff);
+  duration =  Math.abs(diff) < 1000 ? 500 : 1000
+
+  // Easing function: easeInOutCubic
+  var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
+  var start
+
+  if (!diff) return
+
+	// Bootstrap our animation - it will get called right before next frame shall be rendered.
+	window.requestAnimationFrame(function step(timestamp) {
+    if (!start) start = timestamp
+    // Elapsed miliseconds since start of scrolling.
+    var time = timestamp - start
+		// Get percent of completion in range [0, 1].
+    var percent = Math.min(time / duration, 1)
+    // Apply the easing.
+    // It can cause bad-looking slow frames in browser performance tool, so be careful.
+    percent = easing(percent)
+
+    window.scrollTo(0, startingY + diff * percent)
+
+		// Proceed with animation as long as we wanted it to.
+    if (time < duration) {
+      window.requestAnimationFrame(step)
+    }
+  })
 }

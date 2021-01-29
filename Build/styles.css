@@ -14,16 +14,31 @@
   box-sizing: border-box;
 }
 
-html, body{
+html{
+  /* Maybe because both classes have the overscroll setting it is fucking it */
   height: 100%;
+  -webkit-overflow-scrolling: touch;
+  /* scroll-behavior: smooth; */
+  width: 100%;
   overscroll-behavior: none;
 }
 
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+  transition: 0.3s all;
+  /* z-index: 0; */
+}
 
-article{
+.change{
+  background-color: #1c2e37;
+  transition: 0.3s all;
+}
+
+/* article{
   position: fixed;
   top: 64px;
-  scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
   height:calc(100% - 64px);
   height:-moz-calc(100% - 64px);
@@ -33,17 +48,30 @@ article{
   scroll-behavior: smooth;
   width: 100vw;
   overscroll-behavior: none;
-}
+} */
 
 section{
-  scroll-snap-align: start;
   min-height: 100%;
   max-height: max-content;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #dadada;
   position: relative;
+
+
+  /* background: -moz-radial-gradient(center, ellipse cover, rgba(28,46,55,1) 65%, rgba(28,46,55,0) 100%, rgba(28,46,55,0) 100%); /* ff3.6+ */ */
+  /* background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(65%, rgba(28,46,55,1)), color-stop(100%, rgba(28,46,55,0)), color-stop(100%, rgba(28,46,55,0))); /* safari4+,chrome */ */
+  /* background:-webkit-radial-gradient(center, ellipse cover, rgba(28,46,55,1) 65%, rgba(28,46,55,0) 100%, rgba(28,46,55,0) 100%); /* safari5.1+,chrome10+ */ */
+  /* background: -o-radial-gradient(center, ellipse cover, rgba(28,46,55,1) 65%, rgba(28,46,55,0) 100%, rgba(28,46,55,0) 100%); /* opera 11.10+ */ */
+  /* background: -ms-radial-gradient(center, ellipse cover, rgba(28,46,55,1) 65%, rgba(28,46,55,0) 100%, rgba(28,46,55,0) 100%); /* ie10+ */ */
+  /* background:radial-gradient(ellipse at center, rgba(28,46,55,1) 65%, rgba(28,46,55,0) 100%, rgba(28,46,55,0) 100%); /* w3c */ */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c2e37', endColorstr='#1c2e37',GradientType=1 ); /* ie6-9 */ */
+
+  /* z-index: 0; */
+
+
 }
 
 /* SCROLL PROGRESS */
@@ -62,6 +90,8 @@ a{
   font-family: 'AcuminPro';
   text-decoration: none;
   font-size: 22px;
+  font-weight: 500;
+	letter-spacing: 2.5px;
 }
 
 h1{
@@ -77,8 +107,11 @@ h1{
 	text-indent: 0vh;
 	text-transform: uppercase;
 	word-spacing: 0px;
+  margin-top: 70px;
+  /* background-color: #1c2e37;
+  background: radial-gradient( 75%, rgba(11,18,22,0) 25%); */
 
-  transition-timing-function: ease-out;
+
 }
 
 
@@ -116,6 +149,24 @@ li{
   margin: 20px 0;
 }
 
+.grid li{
+  border: 0;
+}
+
+.blue-background li{
+  border: 3px solid #dadada;
+  color: #dadada;
+}
+
+.change .blue-background li{
+  border: 3px solid #f7c86f;
+  color: #dadada;
+}
+
+.change li{
+  border: 3px solid #1c2e37;
+}
+
 #services-button, #findoutmore, #companypolicies, #partners, #casestudies{
   width: fit-content;
   padding: 5px 20px 2px 20px;
@@ -139,6 +190,11 @@ li{
   justify-content: center; */
 }
 
+.spacer{
+  /* height: 20vh; */
+  width: 100%;
+}
+
 button{
   list-style-type: none;
   color: #1c2e37;
@@ -154,8 +210,18 @@ button{
   margin: 20px 0;
 }
 
-.blue-background li{
+.blue-background button{
+  border: 3px solid #dadada;
   color: #dadada;
+}
+
+.change .blue-background button{
+  border: 3px solid #f7c86f;
+  color: #dadada;
+}
+
+.change button{
+  border: 3px solid #1c2e37;
 }
 
 .progress-container {
@@ -318,7 +384,7 @@ button{
 
 
 .blue-background{
-  background-color: #1c2e37;
+  /* background-color: #1c2e37; */
 }
 
 .blue-background h1{
@@ -342,7 +408,7 @@ button{
   transition-timing-function: ease-out;
   transform: translate(0);
   opacity: 1;
-  z-index: 1;
+  : 1;
   will-change: transform;
 }
 
@@ -356,35 +422,6 @@ button{
   padding: 20px;
 }
 
-.show-on-scroll {
-  transition-timing-function: ease-in;
-  transition: 0.5s;
-  opacity: 0;
-  will-change: transform;
-}
-
-.top{
-  transform: translate(0, -10%);
-  will-change: transform;
-}
-
-.middle{
-  /* transform: translate(0, 5%); */
-  will-change: transform;
-}
-
-.bottom{
-  will-change: transform;
-}
-
-.show-on-scroll.is-visible{
-  transition: 0.5s;
-  transition-timing-function: ease-out;
-  transform: translate(0);
-  will-change: transform;
-  opacity: 1;
-}
-
 .mapcontainer{
   background-color: #1c2e37;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -393,7 +430,6 @@ button{
   padding: 10px;
   display: flex;
   flex-direction: column;
-
 }
 
 .map{
@@ -424,6 +460,62 @@ iframe{
   display: none;
 }
 
+.drawingone{
+  position: fixed;
+  top: 0;
+  width: 200vw;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.drawingtwo{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.drawingthree{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 80vh;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.drawingfour{
+  position: fixed;
+  top: 0;
+  right: -50vw;
+  width: 200vw;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.drawingfive{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.drawingsix{
+  position: fixed;
+  top: 200px;
+  width: 100vw;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.showdrawing{
+  opacity: 1;
+  transition: 1.5s all;
+}
+
 /* C A R E E R S   P A G E */
 
 .careers{
@@ -446,6 +538,8 @@ iframe{
   pointer-events: none;
   cursor: default;
 }
+
+
 
 /* Media Rules */
 
@@ -614,7 +708,6 @@ iframe{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 40px 0 0;
   }
 
 
