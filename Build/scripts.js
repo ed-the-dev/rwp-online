@@ -1,31 +1,13 @@
-
-// var sections = document.getElementsByClassName("content");
 var displayHeight = document.documentElement.clientHeight;
 var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-// console.log('Height = ' + scrolled);
-// let currentSec = 'welcome';
+
+var winScroll = document.documentElement.scrollTop;
+var scrolled = (winScroll / height) * 100;
+
 
 // Checking current section for correct theme on reload.
 
 let currentSec = ''
-
-// if(window.location.hash == '#careers') {
-//   currentSec = 'careers';
-//   history.replaceState(null, null, ' ');
-// } else if (window.location.hash == '#company') {
-//   currentSec = 'company';
-// } else {
-//   _sections = ['welcome','services','about-rwp','contact','careers','company'];
-//   var _bbs = [];
-//   var _areas = [];
-//   for (var i = 0; i <_sections.length; i++){
-//     _bbs[i] = document.getElementById(_sections[i]).getBoundingClientRect();
-//     _areas[i] = (_bbs[i].top < 64) ? _bbs[i].bottom - 64 : displayHeight - _bbs[i].top - 64;
-//   }
-//
-//   currentSec = _sections[indexOfMax(_areas)];
-// }
-
 
 
 _sections = ['welcome','services','about-rwp','contact','careers','company'];
@@ -39,10 +21,6 @@ for (var i = 0; i <_sections.length; i++){
 currentSec = _sections[indexOfMax(_areas)];
 
 console.log("location of careers = " + document.getElementById('careers').getBoundingClientRect().top);
-
-
-
-
 
 switch (currentSec) {
   case 'welcome': // welcome
@@ -77,15 +55,30 @@ switch (currentSec) {
     break;
 }
 
+// window.onscroll = function(){scrolling()};
+window.onscroll = function(){onScroll()};
 
 
+var latestKnownScrollY = 0,
+	ticking = false;
+
+function onScroll() {
+	latestKnownScrollY = window.scrollY;
+	requestTick();
+}
+
+function requestTick() {
+	if(!ticking) {
+		requestAnimationFrame(update);
+	}
+	ticking = true;
+}
+
+function update() {
 
 
-window.onscroll = function(){scrolling()};
+	var currentScrollY = latestKnownScrollY;
 
-function scrolling() {
-  var winScroll = document.documentElement.scrollTop;
-  var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 
   adjSects = getSections(currentSec);
@@ -94,7 +87,6 @@ function scrolling() {
   var bbs = [];
   var areas = [];
   for (var i = 0; i <adjSects.length; i++){
-    // console.log(adjSects[i]);
     bbs[i] = document.getElementById(adjSects[i]).getBoundingClientRect();
     areas[i] = (bbs[i].top < 64) ? bbs[i].bottom - 64 : displayHeight - bbs[i].top - 64;
   }
@@ -102,7 +94,6 @@ function scrolling() {
   let section = adjSects[indexOfMax(areas)];
 
   if (section == currentSec){
-    // do nothing
   } else {
     currentSec = section;
 
@@ -169,6 +160,16 @@ function scrolling() {
 
     }
   }
+
+  // reset the tick so we can
+	// capture the next onScroll
+	ticking = false;
+}
+
+function scrollBtn(){
+  console.log("Function triggered");
+  // document.getElementById("inner").classList.add('clickInner')
+  // document.getElementById("outer").classList.add('clickOuter')
 }
 
 
@@ -250,7 +251,6 @@ function doScrolling(element) {
 	var diff = targetY - startingY;
   console.log("Difference = " + diff);
 
-  // duration = Math.abs(diff);
   duration =  Math.abs(diff) < 1000 ? 500 : 1000
 
   // Easing function: easeInOutCubic

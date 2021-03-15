@@ -72,18 +72,24 @@
           engaged in a wide range of civil and structural engineering works
           carrying out design, supervision and project management.</p>
 
-        <ul data-aos="fade-up">
+        <!-- <ul data-aos="fade-up">
 
             <a onclick="doScrolling('services')">
               <li id="services-button">Services&#x2794;</li>
             </a>
 
-        </ul>
+        </ul> -->
+        <input type="checkbox" id="checkbox" />
+        <label class="scrollbtn"for="checkbox">
+          <svg class="" onclick="doScrolling('services'), scrollBtn()" viewBox="0 0 44.6 44.6">
+                <path d="M0 0h44.6v44.6H0z" fill="none"/>
+                <path class="inner" id="inner" d="M22.3 3.7A18.6 18.6 0 1041 22.3 18.6 18.6 0 0022.3 3.7zm0 24.2L15 20.5h14.9z" fill="#dadada"/>
+                <path class="outer" id="outer" d="M22.4.6a21.8 21.8 0 1021.8 21.7A21.8 21.8 0 0022.4.6zm0 38.7a17 17 0 1117-17 17 17 0 01-17 17z"fill="#dadada" opacity="0"/>
+          </svg>
+        </label>
 
 
       </div>
-
-
     </section>
 
     <section id="services">
@@ -299,8 +305,7 @@
         {once: false,
         easing: 'ease-out',
         duration: 500,
-        delay: 100}
-        // {duration: 1000}
+        delay: 0}
       )
     </script>
 
